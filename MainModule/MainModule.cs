@@ -4,11 +4,11 @@ using Microsoft.Practices.Unity;
 using System;
 using Tools;
 
-namespace LoginModule
+namespace MainModule
 {
-    public class LoginModule : IModule
+    public class StartModule : IModule
     {
-        public LoginModule(IRegionManager regionManager, IUnityContainer container)
+        public StartModule(IRegionManager regionManager, IUnityContainer container)
         {
             _regionManager = regionManager;
             _container = container;
@@ -19,9 +19,8 @@ namespace LoginModule
 
         public void Initialize()
         {
-            _regionManager.RegisterViewWithRegion(NameOfRegions.MainRegion, typeof(Views.LoginView));
-            _container.RegisterType<Object, Views.LoginView>(NameOfViews.LoginView);
-            _container.RegisterType<Object, ViewModels.LoginViewModel>("aze");
+            _regionManager.RegisterViewWithRegion(NameOfRegions.MainRegion, typeof(Views.MainView));
+            _container.RegisterType<Object, Views.MainView>(NameOfViews.MainView);
         }
     }
 }

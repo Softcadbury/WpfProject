@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataTest
+namespace Tools
 {
-    class Program
+    public class NameOfRegions
     {
-        static void Main(string[] args)
-        {
-        }
+        public const string MainRegion = "MainRegion";
     }
 }

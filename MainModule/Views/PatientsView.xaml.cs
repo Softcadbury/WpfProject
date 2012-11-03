@@ -13,17 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LoginModule.Views
+namespace MainModule.Views
 {
     /// <summary>
-    /// Interaction logic for LoginView.xaml
+    /// Interaction logic for PatientsView.xaml
     /// </summary>
-    public partial class LoginView : UserControl
+    public partial class PatientsView : UserControl
     {
-        public LoginView()
+        public PatientsView()
         {
             InitializeComponent();
-            this.DataContext = new ViewModels.LoginViewModel() { Pwd = Pwd };
         }
     }
 }

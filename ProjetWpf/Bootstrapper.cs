@@ -1,7 +1,9 @@
 ﻿using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.UnityExtensions;
 using Microsoft.Practices.Unity;
+using System;
 using System.Windows;
+using Tools;
 
 namespace ProjetWpf
 {
@@ -24,6 +26,7 @@ namespace ProjetWpf
             base.ConfigureModuleCatalog();
             ModuleCatalog moduleCatalog = (ModuleCatalog)this.ModuleCatalog;
             moduleCatalog.AddModule(typeof(LoginModule.LoginModule));
+            moduleCatalog.AddModule(typeof(MainModule.StartModule));
         }
     }
 }

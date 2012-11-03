@@ -2,8 +2,9 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://www.codeplex.com/prism"
+        xmlns:tools="clr-namespace:Tools;assembly=Tools"
         Title="Wpf Project" WindowState="Maximized">
-    <Grid Width="auto" Height="auto" Background="#22282A">
-        <ItemsControl Name="MainRegion" prism:RegionManager.RegionName="MainRegion" Width="auto" Height="auto" />
+    <Grid Width="auto" Height="auto">
+        <ContentControl Name="MainRegion" prism:RegionManager.RegionName="{x:Static tools:NameOfRegions.MainRegion}" Width="auto" Height="auto" />
     </Grid>
 </Window>

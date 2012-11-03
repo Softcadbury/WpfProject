@@ -16,6 +16,6 @@ namespace DataModel
 
         public int Id { get; set; }
 
-        public List<Observation> Observations { get; set; }
+        public List<ObservationModel> Observations { get; set; }
     }
 }

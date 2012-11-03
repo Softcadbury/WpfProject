@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="MainModule.Views.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MainModule.Views">
+    <TabControl>
+        <TabItem Header="Profil">
+            <local:ProfilView></local:ProfilView>
+        </TabItem>
+        <TabItem Header="Utilisateurs">
+            <local:UsersView></local:UsersView>
+        </TabItem>
+        <TabItem Header="Patients">
+            <local:PatientsView></local:PatientsView>
+        </TabItem>
+    </TabControl>
+</UserControl>

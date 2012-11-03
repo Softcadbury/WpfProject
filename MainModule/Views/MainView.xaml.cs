@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Practices.Prism.Regions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,17 +14,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LoginModule.Views
+namespace MainModule.Views
 {
     /// <summary>
-    /// Interaction logic for LoginView.xaml
+    /// Interaction logic for StartView.xaml
     /// </summary>
-    public partial class LoginView : UserControl
+    public partial class MainView : UserControl
     {
-        public LoginView()
+        public MainView()
         {
             InitializeComponent();
-            this.DataContext = new ViewModels.LoginViewModel() { Pwd = Pwd };
+            this.DataContext = new ViewModels.MainViewModel();
         }
     }
 }

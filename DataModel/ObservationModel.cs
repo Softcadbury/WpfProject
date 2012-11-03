@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataModel
 {
-    public class Observation
+    public class ObservationModel
     {
         public DateTime Date { get; set; }
 

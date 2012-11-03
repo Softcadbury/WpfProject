@@ -111,6 +111,14 @@
       <Project>{b7c39bd1-de3d-4651-a4b1-977ed0928434}</Project>
       <Name>LoginModule</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MainModule\MainModule.csproj">
+      <Project>{ae686f91-bb5e-4439-ab35-44b70978fe1a}</Project>
+      <Name>MainModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tools\Tools.csproj">
+      <Project>{82e47ac6-0926-49f1-9d6c-f4ee48fafa20}</Project>
+      <Name>Tools</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
