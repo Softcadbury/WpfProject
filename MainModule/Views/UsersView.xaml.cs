@@ -23,6 +23,7 @@ namespace MainModule.Views
         public UsersView()
         {
             InitializeComponent();
+            DataContext = new ViewModels.UsersViewModel();
         }
     }
 }

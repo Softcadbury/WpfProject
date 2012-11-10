@@ -3,14 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:MainModule.Views">
     <TabControl>
-        <TabItem Header="Profil">
-            <local:ProfilView></local:ProfilView>
+        <!--<TabItem Header="Profil" Height="28" Width="80">
+            <local:ProfilView Margin="5"></local:ProfilView>
+        </TabItem>-->
+        <TabItem Header="Utilisateurs" Height="28" Width="80">
+            <local:UsersView Margin="5"></local:UsersView>
         </TabItem>
-        <TabItem Header="Utilisateurs">
-            <local:UsersView></local:UsersView>
-        </TabItem>
-        <TabItem Header="Patients">
-            <local:PatientsView></local:PatientsView>
+        <TabItem Header="Patients" Height="28" Width="80">
+            <local:PatientsView Margin="5"></local:PatientsView>
         </TabItem>
     </TabControl>
 </UserControl>

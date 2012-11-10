@@ -1,4 +1,6 @@
-﻿using DataModel;
+﻿using AutoMapper;
+using DataAccess.ServiceObservation;
+using DataModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +13,9 @@ namespace DataAccess
     {
         public static bool AddObservation(int idPatient, ObservationModel obs)
         {
-            return true;
+            ServiceObservationClient serviceObs = new ServiceObservationClient();
+            Mapper.CreateMap<ObservationModel, Observation>();
+            return serviceObs.AddObservation(idPatient, Mapper.Map<ObservationModel, Observation>(obs));
         }
     }
 }

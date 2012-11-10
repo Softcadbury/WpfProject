@@ -23,6 +23,7 @@ namespace MainModule.Views
         public PatientsView()
         {
             InitializeComponent();
+            DataContext = new ViewModels.PatientsViewModel();
         }
     }
 }

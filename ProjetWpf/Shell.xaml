@@ -5,6 +5,7 @@
         xmlns:tools="clr-namespace:Tools;assembly=Tools"
         Title="Wpf Project" WindowState="Maximized">
     <Grid Width="auto" Height="auto">
-        <ContentControl Name="MainRegion" prism:RegionManager.RegionName="{x:Static tools:NameOfRegions.MainRegion}" Width="auto" Height="auto" />
+        <ContentControl Name="MainRegion" prism:RegionManager.RegionName="{x:Static tools:NameOfRegions.MainRegion}"
+                        Width="auto" Height="auto" />
     </Grid>
 </Window>

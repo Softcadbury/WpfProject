@@ -9,6 +9,10 @@ namespace MainModule.ViewModels
 {
     public class ProfilViewModel : BaseViewModel
     {
+        #region Constructor
+
+        #endregion Constructor
+
         #region Fields
 
         public ProfilViewModel()

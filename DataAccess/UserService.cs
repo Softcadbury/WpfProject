@@ -1,4 +1,6 @@
-﻿using DataModel;
+﻿using AutoMapper;
+using DataAccess.ServiceUser;
+using DataModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,36 +13,52 @@ namespace DataAccess
     {
         public static List<UserModel> GetListUser()
         {
-            return new List<UserModel>();
+            ServiceUserClient serviceUser = new ServiceUserClient();
+
+            User[] users = serviceUser.GetListUser();
+            if (users == null)
+                return null;
+
+            Mapper.CreateMap<User, UserModel>();
+            return Mapper.Map<List<User>, List<UserModel>>(users.ToList());
         }
 
         public static UserModel GetUser(string login)
         {
-            return new UserModel();
+            ServiceUserClient serviceUser = new ServiceUserClient();
+            Mapper.CreateMap<User, UserModel>();
+            return Mapper.Map<User, UserModel>(serviceUser.GetUser(login));
         }
 
         public static bool AddUser(UserModel user)
         {
-            return true;
+            ServiceUserClient serviceUser = new ServiceUserClient();
+            Mapper.CreateMap<UserModel, User>();
+            return serviceUser.AddUser(Mapper.Map<UserModel, User>(user));
         }
 
         public static bool DeleteUser(string login)
         {
-            return true;
+            ServiceUserClient serviceUser = new ServiceUserClient();
+            return serviceUser.DeleteUser(login);
         }
 
         public static bool Connect(string login, string pwd)
         {
-            return true;
+            ServiceUserClient serviceUser = new ServiceUserClient();
+            return serviceUser.Connect(login, pwd);
         }
 
         public static void Disconnect(string login)
         {
+            ServiceUserClient serviceUser = new ServiceUserClient();
+            serviceUser.Disconnect(login);
         }
 
         public static string GetRole(string login)
         {
-            return "roumain";
+            ServiceUserClient serviceUser = new ServiceUserClient();
+            return serviceUser.GetRole(login);
         }
     }
 }
