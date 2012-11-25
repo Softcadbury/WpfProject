@@ -1,5 +1,4 @@
-﻿using DataModel;
-using Microsoft.Practices.Prism.Events;
+﻿using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.ServiceLocation;
@@ -20,6 +19,7 @@ namespace LoginModule.ViewModels
 
         public LoginViewModel()
         {
+            LeaveCommand = new RelayCommand(param => LeaveCommandAction());
             LoginCommand = new RelayCommand(param => LoginCommandAction());
         }
 
@@ -55,6 +55,13 @@ namespace LoginModule.ViewModels
 
         #region Commands
 
+        public RelayCommand LeaveCommand { get; set; }
+
+        private void LeaveCommandAction()
+        {
+            Application.Current.Shutdown();
+        }
+
         public RelayCommand LoginCommand { get; set; }
 
         private void LoginCommandAction()
@@ -65,7 +72,7 @@ namespace LoginModule.ViewModels
                 return;
             }
 
-            if (!DataAccess.UserService.Connect(Login, Pwd.Password))
+            if (!DataAccess.ServiceUserHelper.Connect(Login, Pwd.Password))
             {
                 ErrorMsg = "Les champs de connexion sont incorrects";
                 Pwd.Password = string.Empty;

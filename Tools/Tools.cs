@@ -12,9 +12,9 @@ using System.Windows.Media.Imaging;
 namespace Tools
 {
     /// <summary>
-    /// Permet de déclarer des méthodes utiles au projet
+    /// Permet de déclarer des méthodes ou des fields utiles au projet
     /// </summary>
-    public static class UsefulMethods
+    public static class Useful
     {
         /// <summary>
         /// Donne le byte[] d'une image grâce à son chemin
@@ -54,5 +54,13 @@ namespace Tools
 
             return newImageByteArray;
         }
+
+        /// <summary>
+        /// Fields pour définir les messages d'erreurs ou d'actions valides
+        /// </summary>
+
+        public static string ErrorMsgColor = "Coral";
+
+        public static string ValidMsgColor = "Chartreuse";
     }
 }

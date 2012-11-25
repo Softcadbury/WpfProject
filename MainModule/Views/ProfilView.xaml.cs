@@ -25,5 +25,10 @@ namespace MainModule.Views
             InitializeComponent();
             DataContext = new ViewModels.ProfilViewModel();
         }
+
+        private void UserControlLoaded(object sender, RoutedEventArgs e)
+        {
+            ((ViewModels.ProfilViewModel)DataContext).UserControlLoaded();
+        }
     }
 }

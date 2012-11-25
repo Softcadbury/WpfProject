@@ -76,7 +76,6 @@
     <SolidColorBrush x:Key="DefaultedBorderBrush" Color="{StaticResource DefaultColor}" />
     <SolidColorBrush x:Key="SolidBorderBrush" Color="#888" />
 
-
     <Style x:Key="NuclearButtonFocusVisual">
         <Setter Property="Control.Template">
             <Setter.Value>
@@ -94,7 +93,7 @@
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
         <Setter Property="Template" Value="{DynamicResource ButtonTemplate}" />
-   </Style>
+    </Style>
 
     <ControlTemplate x:Key="ButtonTemplate" TargetType="{x:Type Button}">
         <ControlTemplate.Resources>
@@ -105,7 +104,6 @@
                 <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
                     <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                 </DoubleAnimationUsingKeyFrames>
-
             </Storyboard>
             <Storyboard x:Key="HoverOff">
                 <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverShineBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
@@ -114,21 +112,18 @@
                 <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
                     <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                 </DoubleAnimationUsingKeyFrames>
-
             </Storyboard>
             <Storyboard x:Key="PressedOn">
 
                 <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="PressedBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
                     <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                 </DoubleAnimationUsingKeyFrames>
-
             </Storyboard>
             <Storyboard x:Key="PressedOff">
 
                 <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="PressedBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
                     <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                 </DoubleAnimationUsingKeyFrames>
-
             </Storyboard>
             <Storyboard x:Key="FocusedOn">
                 <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="FocusVisualElement" Storyboard.TargetProperty="(UIElement.Opacity)">
@@ -140,7 +135,6 @@
                     <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                 </DoubleAnimationUsingKeyFrames>
             </Storyboard>
-
         </ControlTemplate.Resources>
         <Grid x:Name="Grid">
             <Border x:Name="Background" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3" />
@@ -162,7 +156,6 @@
                 <Trigger.EnterActions>
                     <BeginStoryboard Storyboard="{StaticResource FocusedOn}" x:Name="FocusedOn_BeginStoryboard" />
                 </Trigger.EnterActions>
-
             </Trigger>
             <Trigger Property="IsMouseOver" Value="true">
                 <Trigger.ExitActions>
@@ -171,7 +164,6 @@
                 <Trigger.EnterActions>
                     <BeginStoryboard Storyboard="{StaticResource HoverOn}" />
                 </Trigger.EnterActions>
-
             </Trigger>
             <Trigger Property="IsPressed" Value="true">
                 <Trigger.ExitActions>
@@ -433,7 +425,6 @@
                 <Trigger.EnterActions>
                     <BeginStoryboard x:Name="CheckedOff_BeginStoryboard" Storyboard="{StaticResource CheckedOff}" />
                 </Trigger.EnterActions>
-
             </Trigger>
             <Trigger Property="IsChecked" Value="True" />
             <Trigger Property="IsMouseOver" Value="true">
@@ -444,7 +435,6 @@
                 <Trigger.EnterActions>
                     <BeginStoryboard Storyboard="{StaticResource HoverOn}" />
                 </Trigger.EnterActions>
-
             </Trigger>
             <Trigger Property="IsPressed" Value="true">
 
@@ -454,7 +444,6 @@
                 <Trigger.EnterActions>
                     <BeginStoryboard x:Name="PressedOn_BeginStoryboard" Storyboard="{StaticResource PressedOn}" />
                 </Trigger.EnterActions>
-
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
                 <Setter Property="Fill" TargetName="Background" Value="{DynamicResource DisabledBackgroundBrush}" />
@@ -474,22 +463,22 @@
                     <ControlTemplate.Resources>
                         <Storyboard x:Key="HoverOn">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.8"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.8" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="HoverOff">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0.3"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0.3" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="PressedOn">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.1" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="PressedOff">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0.3"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0.3" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                     </ControlTemplate.Resources>
@@ -501,22 +490,22 @@
                         <Trigger Property="IsKeyboardFocused" Value="true" />
                         <Trigger Property="IsMouseOver" Value="true">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOn}"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOn}" />
                             </Trigger.EnterActions>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource PressedOff}" x:Name="PressedOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource PressedOff}" x:Name="PressedOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource PressedOn}" x:Name="PressedOn_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource PressedOn}" x:Name="PressedOn_BeginStoryboard" />
                             </Trigger.EnterActions>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Opacity" TargetName="ContentPresenter" Value="0.1"/>
+                            <Setter Property="Opacity" TargetName="ContentPresenter" Value="0.1" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -530,22 +519,22 @@
                     <ControlTemplate.Resources>
                         <Storyboard x:Key="HoverOn">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.8"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.8" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="HoverOff">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0.3"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0.3" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="PressedOn">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="PressedRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.1" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="PressedOff">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="PressedRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0.3"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0.3" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                     </ControlTemplate.Resources>
@@ -565,21 +554,21 @@
                         <Trigger Property="IsFocused" Value="True" />
                         <Trigger Property="IsMouseOver" Value="True">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOn}"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOn}" />
                             </Trigger.EnterActions>
                         </Trigger>
-                        <Trigger Property="IsEnabled" Value="False" >
-                            <Setter Property="Opacity" TargetName="Grid" Value="0.1"/>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" TargetName="Grid" Value="0.1" />
                         </Trigger>
                         <Trigger Property="IsDragging" Value="True">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource PressedOff}" x:Name="PressedOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource PressedOff}" x:Name="PressedOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource PressedOn}" x:Name="PressedOn_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource PressedOn}" x:Name="PressedOn_BeginStoryboard" />
                             </Trigger.EnterActions>
                         </Trigger>
                     </ControlTemplate.Triggers>
@@ -734,67 +723,62 @@
                         <Storyboard x:Key="HoverOn">
 
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
-
                         </Storyboard>
                         <Storyboard x:Key="HoverOff">
 
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
-
                         </Storyboard>
                         <Storyboard x:Key="SelectedOn">
 
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="SelectedRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
-
                         </Storyboard>
                         <Storyboard x:Key="SelectedOff">
 
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="SelectedRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
-
                         </Storyboard>
                         <Storyboard x:Key="FocussedOn">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="FocusVisualElement" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="FocussedOff">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="FocusVisualElement" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                     </ControlTemplate.Resources>
                     <Grid SnapsToDevicePixels="true" Margin="1,1,1,1">
-                        <Rectangle x:Name="Background" IsHitTestVisible="False" Opacity="0.25" Fill="{StaticResource NormalBrush}" RadiusX="1" RadiusY="1"/>
-                        <Rectangle x:Name="HoverRectangle" IsHitTestVisible="False" Opacity="0" Fill="{StaticResource NormalBrush}" RadiusX="1" RadiusY="1"/>
-                        <Rectangle x:Name="SelectedRectangle" IsHitTestVisible="False" Opacity="0" Fill="{StaticResource SelectedBackgroundBrush}" RadiusX="1" RadiusY="1"/>
+                        <Rectangle x:Name="Background" IsHitTestVisible="False" Opacity="0.25" Fill="{StaticResource NormalBrush}" RadiusX="1" RadiusY="1" />
+                        <Rectangle x:Name="HoverRectangle" IsHitTestVisible="False" Opacity="0" Fill="{StaticResource NormalBrush}" RadiusX="1" RadiusY="1" />
+                        <Rectangle x:Name="SelectedRectangle" IsHitTestVisible="False" Opacity="0" Fill="{StaticResource SelectedBackgroundBrush}" RadiusX="1" RadiusY="1" />
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="5,2,0,2" x:Name="contentPresenter" />
-                        <Rectangle x:Name="FocusVisualElement" Stroke="{StaticResource HoverShineBrush}" StrokeThickness="1" RadiusX="1" RadiusY="1" Opacity="0"/>
+                        <Rectangle x:Name="FocusVisualElement" Stroke="{StaticResource HoverShineBrush}" StrokeThickness="1" RadiusX="1" RadiusY="1" Opacity="0" />
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsFocused" Value="True">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource FocussedOff}" x:Name="FocussedOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource FocussedOff}" x:Name="FocussedOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource FocussedOn}" x:Name="FocussedOn_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource FocussedOn}" x:Name="FocussedOn_BeginStoryboard" />
                             </Trigger.EnterActions>
                         </Trigger>
                         <Trigger Property="IsSelected" Value="true">
 
                             <Trigger.ExitActions>
-                                <BeginStoryboard x:Name="SelectedOff_BeginStoryboard" Storyboard="{StaticResource SelectedOff}"/>
+                                <BeginStoryboard x:Name="SelectedOff_BeginStoryboard" Storyboard="{StaticResource SelectedOff}" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard x:Name="SelectedOn_BeginStoryboard" Storyboard="{StaticResource SelectedOn}"/>
+                                <BeginStoryboard x:Name="SelectedOn_BeginStoryboard" Storyboard="{StaticResource SelectedOn}" />
                             </Trigger.EnterActions>
-
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
@@ -803,19 +787,17 @@
                             </MultiTrigger.Conditions>
 
                             <MultiTrigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOn}"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOn}" />
                             </MultiTrigger.EnterActions>
                             <MultiTrigger.ExitActions>
-                                <BeginStoryboard x:Name="HoverOff_BeginStoryboard" Storyboard="{StaticResource HoverOff}"/>
+                                <BeginStoryboard x:Name="HoverOff_BeginStoryboard" Storyboard="{StaticResource HoverOff}" />
                             </MultiTrigger.ExitActions>
-
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="Selector.IsSelected" Value="True" />
                                 <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
-
                         </MultiTrigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}" />
@@ -856,28 +838,28 @@
                     <ControlTemplate.Resources>
                         <Storyboard x:Key="HoverOn">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverShineRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="HoverOff">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverShineRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="PressedOn">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="PressedRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="PressedOff">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="PressedRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                     </ControlTemplate.Resources>
@@ -901,23 +883,21 @@
                         <Trigger Property="IsChecked" Value="true">
                             <Setter Property="Visibility" TargetName="Down_Arrow" Value="Visible" />
                             <Setter Property="Visibility" TargetName="Up_Arrow" Value="Collapsed" />
-
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOn}"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOn}" />
                             </Trigger.EnterActions>
-
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource PressedOff}" x:Name="PressedOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource PressedOff}" x:Name="PressedOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource PressedOn}" x:Name="PressedOn_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource PressedOn}" x:Name="PressedOn_BeginStoryboard" />
                             </Trigger.EnterActions>
                         </Trigger>
                     </ControlTemplate.Triggers>
@@ -933,28 +913,28 @@
                     <ControlTemplate.Resources>
                         <Storyboard x:Key="HoverOn">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverShineRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="HoverOff">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverShineRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="PressedOn">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="PressedRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="PressedOff">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="PressedRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                     </ControlTemplate.Resources>
@@ -1002,19 +982,18 @@
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOn}"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOn}" />
                             </Trigger.EnterActions>
-
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource PressedOff}" x:Name="PressedOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource PressedOff}" x:Name="PressedOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource PressedOn}" x:Name="PressedOn_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource PressedOn}" x:Name="PressedOn_BeginStoryboard" />
                             </Trigger.EnterActions>
                         </Trigger>
                     </ControlTemplate.Triggers>
@@ -1030,28 +1009,28 @@
                     <ControlTemplate.Resources>
                         <Storyboard x:Key="HoverOn">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverShineRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="HoverOff">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverShineRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="PressedOn">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="PressedRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="PressedOff">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="PressedRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                     </ControlTemplate.Resources>
@@ -1089,19 +1068,18 @@
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOn}"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOn}" />
                             </Trigger.EnterActions>
-
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource PressedOff}" x:Name="PressedOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource PressedOff}" x:Name="PressedOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource PressedOn}" x:Name="PressedOn_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource PressedOn}" x:Name="PressedOn_BeginStoryboard" />
                             </Trigger.EnterActions>
                         </Trigger>
                     </ControlTemplate.Triggers>
@@ -1117,28 +1095,28 @@
                     <ControlTemplate.Resources>
                         <Storyboard x:Key="HoverOn">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverShineRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="HoverOff">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverShineRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="PressedOn">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="PressedRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="PressedOff">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="PressedRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                     </ControlTemplate.Resources>
@@ -1186,19 +1164,18 @@
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="true">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOn}"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOn}" />
                             </Trigger.EnterActions>
-
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource PressedOff}" x:Name="PressedOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource PressedOff}" x:Name="PressedOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource PressedOn}" x:Name="PressedOn_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource PressedOn}" x:Name="PressedOn_BeginStoryboard" />
                             </Trigger.EnterActions>
                         </Trigger>
                     </ControlTemplate.Triggers>
@@ -1256,18 +1233,18 @@
         <ControlTemplate.Resources>
             <Storyboard x:Key="HoverOn">
                 <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                    <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                 </DoubleAnimationUsingKeyFrames>
                 <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverShineBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                    <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                 </DoubleAnimationUsingKeyFrames>
             </Storyboard>
             <Storyboard x:Key="HoverOff">
                 <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverShineBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                    <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                 </DoubleAnimationUsingKeyFrames>
                 <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                    <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                    <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                 </DoubleAnimationUsingKeyFrames>
             </Storyboard>
         </ControlTemplate.Resources>
@@ -1287,18 +1264,18 @@
         <ControlTemplate.Triggers>
             <Trigger Property="IsMouseOver" Value="true">
                 <Trigger.ExitActions>
-                    <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard"/>
+                    <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard" />
                 </Trigger.ExitActions>
                 <Trigger.EnterActions>
-                    <BeginStoryboard Storyboard="{StaticResource HoverOn}"/>
+                    <BeginStoryboard Storyboard="{StaticResource HoverOn}" />
                 </Trigger.EnterActions>
             </Trigger>
             <Trigger Property="IsChecked" Value="true" />
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}" />
-                <Setter Property="Stroke" TargetName="Arrow" Value="{DynamicResource DisabledForegroundBrush}"/>
-                <Setter Property="Background" TargetName="border" Value="{DynamicResource DisabledBorderBrush}"/>
-                <Setter Property="Opacity" TargetName="grid" Value="0.8"/>
+                <Setter Property="Stroke" TargetName="Arrow" Value="{DynamicResource DisabledForegroundBrush}" />
+                <Setter Property="Background" TargetName="border" Value="{DynamicResource DisabledBorderBrush}" />
+                <Setter Property="Opacity" TargetName="grid" Value="0.8" />
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -1307,7 +1284,7 @@
         <ControlTemplate.Triggers>
         </ControlTemplate.Triggers>
     </ControlTemplate>
-    
+
     <Style TargetType="{x:Type ComboBox}">
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
         <Setter Property="SnapsToDevicePixels" Value="true" />
@@ -1315,19 +1292,21 @@
     </Style>
 
     <ControlTemplate x:Key="ComboBoxTemplate" TargetType="{x:Type ComboBox}">
-        <Grid x:Name="grid">
-            <ToggleButton Grid.Column="2" Template="{DynamicResource ComboBoxToggleButton}" x:Name="ToggleButton" Focusable="false" IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" ClickMode="Press" />
-            <ContentPresenter HorizontalAlignment="Left" Margin="3,3,23,3" x:Name="ContentSite" VerticalAlignment="Center" Content="{TemplateBinding SelectionBoxItem}" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" IsHitTestVisible="False" />
-            <TextBox Visibility="Hidden" Template="{DynamicResource ComboBoxTextBox}" HorizontalAlignment="Left" Margin="3,3,23,3" x:Name="PART_EditableTextBox" Style="{x:Null}" VerticalAlignment="Center" Focusable="True" Background="{DynamicResource LightBrush}" IsReadOnly="{TemplateBinding IsReadOnly}" BorderBrush="{DynamicResource NormalBorderBrush}" Foreground="{DynamicResource TextBrush}" />
-            <Popup IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom" x:Name="Popup" Focusable="False" AllowsTransparency="True" PopupAnimation="Slide">
-                <Grid MaxHeight="{TemplateBinding MaxDropDownHeight}" MinWidth="{TemplateBinding ActualWidth}" x:Name="DropDown" SnapsToDevicePixels="True">
-                    <Border x:Name="DropDownBorder" Background="{DynamicResource ControlBackgroundBrush}" CornerRadius="3,3,3,3" />
-                    <ScrollViewer Margin="4,6,4,6" Style="{DynamicResource NuclearScrollViewer}" SnapsToDevicePixels="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" CanContentScroll="True" Foreground="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}">
-                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
-                    </ScrollViewer>
-                </Grid>
-            </Popup>
-        </Grid>
+        <Border BorderBrush="Black" BorderThickness="1">
+            <Grid x:Name="grid">
+                <ToggleButton Grid.Column="2" Template="{DynamicResource ComboBoxToggleButton}" x:Name="ToggleButton" Focusable="false" IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" ClickMode="Press" />
+                <ContentPresenter HorizontalAlignment="Left" Margin="3,3,23,3" x:Name="ContentSite" VerticalAlignment="Center" Content="{TemplateBinding SelectionBoxItem}" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" IsHitTestVisible="False" />
+                <TextBox Visibility="Hidden" Template="{DynamicResource ComboBoxTextBox}" HorizontalAlignment="Left" Margin="3,3,23,3" x:Name="PART_EditableTextBox" Style="{x:Null}" VerticalAlignment="Center" Focusable="True" Background="{DynamicResource LightBrush}" IsReadOnly="{TemplateBinding IsReadOnly}" BorderBrush="{DynamicResource NormalBorderBrush}" Foreground="{DynamicResource TextBrush}" />
+                <Popup IsOpen="{TemplateBinding IsDropDownOpen}" Placement="Bottom" x:Name="Popup" Focusable="False" AllowsTransparency="True" PopupAnimation="Slide">
+                    <Grid MaxHeight="{TemplateBinding MaxDropDownHeight}" MinWidth="{TemplateBinding ActualWidth}" x:Name="DropDown" SnapsToDevicePixels="True">
+                        <Border x:Name="DropDownBorder" Background="{DynamicResource ControlBackgroundBrush}" CornerRadius="3,3,3,3" />
+                        <ScrollViewer Margin="4,6,4,6" Style="{DynamicResource NuclearScrollViewer}" SnapsToDevicePixels="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" CanContentScroll="True" Foreground="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}">
+                            <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+                        </ScrollViewer>
+                    </Grid>
+                </Popup>
+            </Grid>
+        </Border>
         <ControlTemplate.Triggers>
             <Trigger Property="HasItems" Value="false">
                 <Setter Property="MinHeight" Value="95" TargetName="DropDownBorder" />
@@ -1362,30 +1341,25 @@
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
                                 <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
-
                         </Storyboard>
                         <Storyboard x:Key="HoverOff">
 
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
                                 <SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
-
                         </Storyboard>
                         <Storyboard x:Key="SelectedOn">
 
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="SelectedRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
                                 <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
-
                         </Storyboard>
                         <Storyboard x:Key="SelectedOff">
 
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="SelectedRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
                                 <SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
-
                         </Storyboard>
-
                     </ControlTemplate.Resources>
                     <Grid SnapsToDevicePixels="true" Margin="1,1,1,1">
                         <Rectangle x:Name="Background" IsHitTestVisible="False" Opacity="0.25" Fill="{StaticResource NormalBrush}" RadiusX="1" RadiusY="1" />
@@ -1397,19 +1371,18 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsHighlighted" Value="true">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource SelectedOff}" x:Name="SelectedOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource SelectedOff}" x:Name="SelectedOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource SelectedOn}" x:Name="SelectedOn_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource SelectedOn}" x:Name="SelectedOn_BeginStoryboard" />
                             </Trigger.EnterActions>
-
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOn}"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOn}" />
                             </Trigger.EnterActions>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
@@ -1437,7 +1410,6 @@
                                 <SplineDoubleKeyFrame KeyTime="0" Value="0" />
                                 <SplineDoubleKeyFrame KeyTime="00:00:2.4" Value="145" />
                             </DoubleAnimationUsingKeyFrames>
-
                         </Storyboard>
                     </ControlTemplate.Resources>
                     <Grid>
@@ -1478,11 +1450,11 @@
                                 </Rectangle.Fill>
                             </Rectangle>
                         </Grid>
-                        <Border Background="{DynamicResource DisabledBackgroundBrush}" Opacity="0" BorderThickness="1,1,1,1" BorderBrush="{DynamicResource DisabledBorderBrush}" x:Name="border"/>
+                        <Border Background="{DynamicResource DisabledBackgroundBrush}" Opacity="0" BorderThickness="1,1,1,1" BorderBrush="{DynamicResource DisabledBorderBrush}" x:Name="border" />
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Opacity" TargetName="border" Value="0.8"/>
+                            <Setter Property="Opacity" TargetName="border" Value="0.8" />
                         </Trigger>
                         <EventTrigger RoutedEvent="RangeBase.ValueChanged">
                             <BeginStoryboard Storyboard="{StaticResource ValueChangedOn}" />
@@ -1491,7 +1463,7 @@
                             <Trigger.EnterActions>
                                 <BeginStoryboard Storyboard="{StaticResource IndeterminateOn}" />
                             </Trigger.EnterActions>
-                            <Setter Property="Visibility" TargetName="IndeterminateRoot" Value="Visible"/>
+                            <Setter Property="Visibility" TargetName="IndeterminateRoot" Value="Visible" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -1504,8 +1476,8 @@
         <Setter Property="AllowDrop" Value="true" />
         <Setter Property="Template" Value="{DynamicResource TextBoxTemplate}" />
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
-        <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}"/>
-        <Setter Property="BorderBrush" Value="#FF000000"/>
+        <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="#FF000000" />
     </Style>
 
     <ControlTemplate x:Key="TextBoxTemplate" TargetType="{x:Type TextBox}">
@@ -1541,8 +1513,6 @@
             </Border>
             <Border x:Name="HoverBorder" IsHitTestVisible="False" Opacity="0" BorderBrush="{StaticResource GlyphBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2,2,2,2" />
             <Border x:Name="FocusVisualElement" IsHitTestVisible="False" Opacity="0" BorderBrush="{StaticResource HoverShineBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2,2,2,2" />
-
-
         </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="IsFocused" Value="True">
@@ -1552,7 +1522,6 @@
                 <Trigger.EnterActions>
                     <BeginStoryboard Storyboard="{StaticResource FocusedOn}" x:Name="FocusedOn_BeginStoryboard" />
                 </Trigger.EnterActions>
-
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.ExitActions>
@@ -1565,7 +1534,6 @@
                     <Condition Property="IsMouseOver" Value="True" />
                     <Condition Property="IsFocused" Value="False" />
                 </MultiTrigger.Conditions>
-
             </MultiTrigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Background" TargetName="Border" Value="{DynamicResource DisabledBackgroundBrush}" />
@@ -1614,35 +1582,31 @@
                         </Border>
                         <Border x:Name="HoverBorder" IsHitTestVisible="False" Opacity="0" BorderBrush="{StaticResource GlyphBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2,2,2,2" />
                         <Border x:Name="FocusVisualElement" IsHitTestVisible="False" Opacity="0" BorderBrush="{StaticResource HoverShineBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2,2,2,2" />
-
-
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsFocused" Value="True">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource FocusedOff}" x:Name="FocusedOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource FocusedOff}" x:Name="FocusedOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource FocusedOn}" x:Name="FocusedOn_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource FocusedOn}" x:Name="FocusedOn_BeginStoryboard" />
                             </Trigger.EnterActions>
-
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard" />
                             </MultiTrigger.ExitActions>
                             <MultiTrigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOn}"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOn}" />
                             </MultiTrigger.EnterActions>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsMouseOver" Value="True" />
                                 <Condition Property="IsFocused" Value="False" />
                             </MultiTrigger.Conditions>
-
                         </MultiTrigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background" TargetName="Border" Value="{DynamicResource DisabledBackgroundBrush}"/>
-                            <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource DisabledBorderBrush}"/>
+                            <Setter Property="Background" TargetName="Border" Value="{DynamicResource DisabledBackgroundBrush}" />
+                            <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource DisabledBorderBrush}" />
                             <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
@@ -1650,8 +1614,8 @@
             </Setter.Value>
         </Setter>
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
-        <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}"/>
-        <Setter Property="BorderBrush" Value="#FF000000"/>
+        <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="#FF000000" />
     </Style>
 
     <Style TargetType="{x:Type RichTextBox}">
@@ -1693,35 +1657,31 @@
                         </Border>
                         <Border x:Name="HoverBorder" IsHitTestVisible="False" Opacity="0" BorderBrush="{StaticResource GlyphBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2,2,2,2" />
                         <Border x:Name="FocusVisualElement" IsHitTestVisible="False" Opacity="0" BorderBrush="{StaticResource HoverShineBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2,2,2,2" />
-
-
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsFocused" Value="True">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource FocusedOff}" x:Name="FocusedOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource FocusedOff}" x:Name="FocusedOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource FocusedOn}" x:Name="FocusedOn_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource FocusedOn}" x:Name="FocusedOn_BeginStoryboard" />
                             </Trigger.EnterActions>
-
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard" />
                             </MultiTrigger.ExitActions>
                             <MultiTrigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOn}"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOn}" />
                             </MultiTrigger.EnterActions>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsMouseOver" Value="True" />
                                 <Condition Property="IsFocused" Value="False" />
                             </MultiTrigger.Conditions>
-
                         </MultiTrigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Background" TargetName="Border" Value="{DynamicResource DisabledBackgroundBrush}"/>
-                            <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource DisabledBorderBrush}"/>
+                            <Setter Property="Background" TargetName="Border" Value="{DynamicResource DisabledBackgroundBrush}" />
+                            <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource DisabledBorderBrush}" />
                             <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
@@ -1729,8 +1689,8 @@
             </Setter.Value>
         </Setter>
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
-        <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}"/>
-        <Setter Property="BorderBrush" Value="#FF000000"/>
+        <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="#FF000000" />
     </Style>
     <Style TargetType="{x:Type Label}">
         <Setter Property="HorizontalContentAlignment" Value="Left" />
@@ -1783,18 +1743,18 @@
                     <ControlTemplate.Resources>
                         <Storyboard x:Key="HighlightedOn">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverShineBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="HightlightedOff">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverShineBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                     </ControlTemplate.Resources>
@@ -1806,8 +1766,8 @@
                                 <ColumnDefinition Width="Auto" SharedSizeGroup="MenuItemIGTColumnGroup" />
                                 <ColumnDefinition Width="14" />
                             </Grid.ColumnDefinitions>
-                            <Border Grid.Column="0" Grid.ColumnSpan="4" Background="{DynamicResource HoverBrush}" Opacity="0" x:Name="HoverBorder" CornerRadius="1,1,1,1"/>
-                            <Border Grid.ColumnSpan="4" Background="{DynamicResource HoverShineBrush}" Opacity="0" x:Name="HoverShineBorder" CornerRadius="1,1,1,1"/>
+                            <Border Grid.Column="0" Grid.ColumnSpan="4" Background="{DynamicResource HoverBrush}" Opacity="0" x:Name="HoverBorder" CornerRadius="1,1,1,1" />
+                            <Border Grid.ColumnSpan="4" Background="{DynamicResource HoverShineBrush}" Opacity="0" x:Name="HoverShineBorder" CornerRadius="1,1,1,1" />
                             <ContentPresenter Margin="4,0,6,0" x:Name="Icon" VerticalAlignment="Center" ContentSource="Icon" />
                             <Grid Visibility="Hidden" Margin="4,0,6,0" x:Name="GlyphPanel" VerticalAlignment="Center">
                                 <Path x:Name="GlyphPanelpath" VerticalAlignment="Center" Fill="{TemplateBinding Foreground}" Data="M0,2 L0,4.8 L2.5,7.4 L7.1,2.8 L7.1,0 L2.5,4.6 z" FlowDirection="LeftToRight" />
@@ -1868,10 +1828,10 @@
                         </Trigger>
                         <Trigger Property="IsHighlighted" Value="true">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource HightlightedOff}" x:Name="HightlightedOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource HightlightedOff}" x:Name="HightlightedOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource HighlightedOn}"/>
+                                <BeginStoryboard Storyboard="{StaticResource HighlightedOn}" />
                             </Trigger.EnterActions>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
@@ -1925,7 +1885,6 @@
                                         <TranslateTransform X="0" Y="0" />
                                     </TransformGroup>
                                 </TabPanel.RenderTransform>
-
                             </TabPanel>
                         </Border>
                         <Border x:Name="ContentPanel" Grid.Column="0" Grid.Row="1" KeyboardNavigation.DirectionalNavigation="Contained" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local" Background="{DynamicResource ShadeBrush}" CornerRadius="0,0,2,2">
@@ -1934,14 +1893,14 @@
                         <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" BorderThickness="0,0,0,1" CornerRadius="10,0,0,0" Opacity="0.5" Margin="2,0,2,0" x:Name="border1">
                             <Border.LayoutTransform>
                                 <TransformGroup>
-                                    <ScaleTransform ScaleX="1" ScaleY="1"/>
-                                    <SkewTransform AngleX="0" AngleY="0"/>
-                                    <RotateTransform Angle="0"/>
-                                    <TranslateTransform X="0" Y="0"/>
+                                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                                    <SkewTransform AngleX="0" AngleY="0" />
+                                    <RotateTransform Angle="0" />
+                                    <TranslateTransform X="0" Y="0" />
                                 </TransformGroup>
                             </Border.LayoutTransform>
                             <Border.BorderBrush>
-                                <SolidColorBrush Color="{DynamicResource BlackColor}"/>
+                                <SolidColorBrush Color="{DynamicResource BlackColor}" />
                             </Border.BorderBrush>
                         </Border>
                     </Grid>
@@ -1950,9 +1909,9 @@
                             <Setter Property="Grid.Row" TargetName="ContentPanel" Value="0" />
                             <Setter Property="Height" TargetName="RowDefinition0" Value="*" />
                             <Setter Property="Height" TargetName="RowDefinition1" Value="Auto" />
-                            <Setter Property="Grid.Row" TargetName="border" Value="1"/>
-                            <Setter Property="CornerRadius" TargetName="ContentPanel" Value="2,2,0,0"/>
-                            <Setter Property="CornerRadius" TargetName="border" Value="0,0,2,2"/>
+                            <Setter Property="Grid.Row" TargetName="border" Value="1" />
+                            <Setter Property="CornerRadius" TargetName="ContentPanel" Value="2,2,0,0" />
+                            <Setter Property="CornerRadius" TargetName="border" Value="0,0,2,2" />
                         </Trigger>
                         <Trigger Property="TabStripPlacement" Value="Left">
 
@@ -1963,23 +1922,22 @@
                             <Setter Property="Width" TargetName="ColumnDefinition1" Value="*" />
                             <Setter Property="Height" TargetName="RowDefinition0" Value="*" />
                             <Setter Property="Height" TargetName="RowDefinition1" Value="0" />
-                            <Setter Property="Grid.Column" TargetName="border" Value="0"/>
-                            <Setter Property="Margin" TargetName="border" Value="0,0,0,0"/>
-                            <Setter Property="Margin" TargetName="ContentPanel" Value="0,0,0,0"/>
+                            <Setter Property="Grid.Column" TargetName="border" Value="0" />
+                            <Setter Property="Margin" TargetName="border" Value="0,0,0,0" />
+                            <Setter Property="Margin" TargetName="ContentPanel" Value="0,0,0,0" />
                             <Setter Property="LayoutTransform" TargetName="border1">
                                 <Setter.Value>
                                     <TransformGroup>
-                                        <ScaleTransform ScaleX="1" ScaleY="1"/>
-                                        <SkewTransform AngleX="0" AngleY="0"/>
-                                        <RotateTransform Angle="-90"/>
-                                        <TranslateTransform X="0" Y="0"/>
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                        <SkewTransform AngleX="0" AngleY="0" />
+                                        <RotateTransform Angle="-90" />
+                                        <TranslateTransform X="0" Y="0" />
                                     </TransformGroup>
                                 </Setter.Value>
                             </Setter>
-                            <Setter Property="Margin" TargetName="border1" Value="0,0,0,0"/>
-                            <Setter Property="CornerRadius" TargetName="border" Value="0,2,2,0"/>
-                            <Setter Property="CornerRadius" TargetName="ContentPanel" Value="0,2,2,0"/>
-
+                            <Setter Property="Margin" TargetName="border1" Value="0,0,0,0" />
+                            <Setter Property="CornerRadius" TargetName="border" Value="0,2,2,0" />
+                            <Setter Property="CornerRadius" TargetName="ContentPanel" Value="0,2,2,0" />
                         </Trigger>
                         <Trigger Property="TabStripPlacement" Value="Right">
                             <Setter Property="Grid.Row" TargetName="HeaderPanel" Value="0" />
@@ -1989,20 +1947,20 @@
                             <Setter Property="Width" TargetName="ColumnDefinition1" Value="Auto" />
                             <Setter Property="Height" TargetName="RowDefinition0" Value="*" />
                             <Setter Property="Height" TargetName="RowDefinition1" Value="0" />
-                            <Setter Property="Grid.Column" TargetName="border" Value="1"/>
+                            <Setter Property="Grid.Column" TargetName="border" Value="1" />
                             <Setter Property="LayoutTransform" TargetName="border1">
                                 <Setter.Value>
                                     <TransformGroup>
-                                        <ScaleTransform ScaleX="1" ScaleY="1"/>
-                                        <SkewTransform AngleX="0" AngleY="0"/>
-                                        <RotateTransform Angle="90"/>
-                                        <TranslateTransform X="0" Y="0"/>
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                        <SkewTransform AngleX="0" AngleY="0" />
+                                        <RotateTransform Angle="90" />
+                                        <TranslateTransform X="0" Y="0" />
                                     </TransformGroup>
                                 </Setter.Value>
                             </Setter>
-                            <Setter Property="Grid.Column" TargetName="border1" Value="1"/>
-                            <Setter Property="CornerRadius" TargetName="ContentPanel" Value="2,0,0,2"/>
-                            <Setter Property="CornerRadius" TargetName="border" Value="0,2,2,0"/>
+                            <Setter Property="Grid.Column" TargetName="border1" Value="1" />
+                            <Setter Property="CornerRadius" TargetName="ContentPanel" Value="2,0,0,2" />
+                            <Setter Property="CornerRadius" TargetName="border" Value="0,2,2,0" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
@@ -2020,32 +1978,32 @@
                     <ControlTemplate.Resources>
                         <Storyboard x:Key="HoverOn">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="HoverOff">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="SelectedOn">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="SelectedBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="SelectedOff">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="SelectedBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                     </ControlTemplate.Resources>
                     <Grid x:Name="grid" Margin="2,1,2,3">
                         <Grid.LayoutTransform>
                             <TransformGroup>
-                                <ScaleTransform ScaleX="1" ScaleY="1"/>
-                                <SkewTransform AngleX="0" AngleY="0"/>
-                                <RotateTransform Angle="0"/>
-                                <TranslateTransform X="0" Y="0"/>
+                                <ScaleTransform ScaleX="1" ScaleY="1" />
+                                <SkewTransform AngleX="0" AngleY="0" />
+                                <RotateTransform Angle="0" />
+                                <TranslateTransform X="0" Y="0" />
                             </TransformGroup>
                         </Grid.LayoutTransform>
                         <Border x:Name="border" BorderBrush="{x:Null}" CornerRadius="2,2,2,2" Opacity="0.5">
@@ -2056,7 +2014,7 @@
                                 </LinearGradientBrush>
                             </Border.Background>
                         </Border>
-                        <Border x:Name="SelectedBorder" BorderBrush="{x:Null}" CornerRadius="2,2,2,2" Opacity="0" Background="{DynamicResource SelectedBackgroundBrush}"/>
+                        <Border x:Name="SelectedBorder" BorderBrush="{x:Null}" CornerRadius="2,2,2,2" Opacity="0" Background="{DynamicResource SelectedBackgroundBrush}" />
                         <Border x:Name="HoverBorder" BorderBrush="{x:Null}" CornerRadius="2,2,2,2" Opacity="0">
                             <Border.Background>
                                 <LinearGradientBrush EndPoint="0.5,0.976" StartPoint="0.5,0.039">
@@ -2108,20 +2066,20 @@
                             <Setter Property="LayoutTransform" TargetName="grid">
                                 <Setter.Value>
                                     <TransformGroup>
-                                        <ScaleTransform ScaleX="1" ScaleY="1"/>
-                                        <SkewTransform AngleX="0" AngleY="0"/>
-                                        <RotateTransform Angle="180"/>
-                                        <TranslateTransform X="0" Y="0"/>
+                                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                                        <SkewTransform AngleX="0" AngleY="0" />
+                                        <RotateTransform Angle="180" />
+                                        <TranslateTransform X="0" Y="0" />
                                     </TransformGroup>
                                 </Setter.Value>
                             </Setter>
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard" />
                             </MultiTrigger.ExitActions>
                             <MultiTrigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOn}"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOn}" />
                             </MultiTrigger.EnterActions>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsMouseOver" Value="True" />
@@ -2130,10 +2088,10 @@
                         </MultiTrigger>
                         <Trigger Property="IsSelected" Value="True">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource SelectedOff}" x:Name="SelectedOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource SelectedOff}" x:Name="SelectedOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource SelectedOn}" x:Name="SelectedOn_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource SelectedOn}" x:Name="SelectedOn_BeginStoryboard" />
                             </Trigger.EnterActions>
                             <Setter Property="Panel.ZIndex" Value="100" />
                         </Trigger>
@@ -2147,8 +2105,8 @@
                         </MultiTrigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}" />
-                            <Setter Property="Background" TargetName="border" Value="{DynamicResource DisabledBackgroundBrush}"/>
-                            <Setter Property="Opacity" TargetName="grid" Value="0.3"/>
+                            <Setter Property="Background" TargetName="border" Value="{DynamicResource DisabledBackgroundBrush}" />
+                            <Setter Property="Opacity" TargetName="grid" Value="0.3" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -2156,9 +2114,9 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="Selector.IsSelected" Value="True">
-                <Setter Property="Foreground" >
+                <Setter Property="Foreground">
                     <Setter.Value>
-                        <SolidColorBrush Color="{DynamicResource BlackColor}"/>
+                        <SolidColorBrush Color="{DynamicResource BlackColor}" />
                     </Setter.Value>
                 </Setter>
             </Trigger>
@@ -2180,7 +2138,6 @@
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverShineBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
                                 <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
-
                         </Storyboard>
                         <Storyboard x:Key="HoverOff">
 
@@ -2190,21 +2147,18 @@
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverShineBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
                                 <SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
-
                         </Storyboard>
                         <Storyboard x:Key="PressedOn">
 
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="PressedBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
                                 <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
-
                         </Storyboard>
                         <Storyboard x:Key="PressedOff">
 
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="PressedBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
                                 <SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
-
                         </Storyboard>
                     </ControlTemplate.Resources>
                     <Grid>
@@ -2217,21 +2171,19 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOn}"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOn}" />
                             </Trigger.EnterActions>
-
                         </Trigger>
                         <Trigger Property="IsDragging" Value="True">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource PressedOff}" x:Name="PressedOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource PressedOff}" x:Name="PressedOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource PressedOn}" x:Name="PressedOn_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource PressedOn}" x:Name="PressedOn_BeginStoryboard" />
                             </Trigger.EnterActions>
-
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Background" TargetName="Background" Value="{DynamicResource DisabledBackgroundBrush}" />
@@ -2240,9 +2192,9 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Setter Property="Background" Value="{DynamicResource NormalBrush}"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}"/>
-        <Setter Property="BorderThickness" Value="1,1,1,1"/>
+        <Setter Property="Background" Value="{DynamicResource NormalBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
+        <Setter Property="BorderThickness" Value="1,1,1,1" />
     </Style>
     <Style TargetType="{x:Type Slider}">
         <Setter Property="Background" Value="{DynamicResource NormalBrush}" />
@@ -2338,7 +2290,7 @@
             <Trigger Property="IsSelected" Value="True">
                 <Setter Property="Foreground">
                     <Setter.Value>
-                        <SolidColorBrush Color="{DynamicResource BlackColor}"/>
+                        <SolidColorBrush Color="{DynamicResource BlackColor}" />
                     </Setter.Value>
                 </Setter>
             </Trigger>
@@ -2354,22 +2306,22 @@
                     <ControlTemplate.Resources>
                         <Storyboard x:Key="HoverOn">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="HoverOff">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="SelectedOn">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="SelectionBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="SelectedOff">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="SelectionBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                     </ControlTemplate.Resources>
@@ -2386,9 +2338,9 @@
                         <ToggleButton x:Name="Expander" Style="{DynamicResource NuclearTreeViewItemToggleButton}" IsChecked="{Binding Path=IsExpanded, RelativeSource={RelativeSource TemplatedParent}}" ClickMode="Press" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" />
                         <Border Grid.Column="1" x:Name="Selection_Border" BorderThickness="1,1,1,1" CornerRadius="3,3,3,3">
                             <Grid Width="Auto" Height="Auto">
-                                <Border x:Name="MainBorder" Opacity="0.25" Background="{DynamicResource NormalBrush}" CornerRadius="2,2,2,2"/>
-                                <Border x:Name="SelectionBorder" Opacity="0" Background="{DynamicResource SelectedBackgroundBrush}" CornerRadius="2,2,2,2"/>
-                                <Border x:Name="HoverBorder" Opacity="0" Background="{DynamicResource NormalBrush}" CornerRadius="2,2,2,2"/>
+                                <Border x:Name="MainBorder" Opacity="0.25" Background="{DynamicResource NormalBrush}" CornerRadius="2,2,2,2" />
+                                <Border x:Name="SelectionBorder" Opacity="0" Background="{DynamicResource SelectedBackgroundBrush}" CornerRadius="2,2,2,2" />
+                                <Border x:Name="HoverBorder" Opacity="0" Background="{DynamicResource NormalBrush}" CornerRadius="2,2,2,2" />
                                 <ContentPresenter x:Name="PART_Header" ContentSource="Header" d:LayoutOverrides="Width" Height="Auto" Margin="2,0,2,0" />
                             </Grid>
                         </Border>
@@ -2403,10 +2355,10 @@
                         </Trigger>
                         <Trigger Property="IsSelected" Value="true">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource SelectedOff}" x:Name="SelectedOn_BeginStoryboard1"/>
+                                <BeginStoryboard Storyboard="{StaticResource SelectedOff}" x:Name="SelectedOn_BeginStoryboard1" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource SelectedOn}" x:Name="SelectedOn_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource SelectedOn}" x:Name="SelectedOn_BeginStoryboard" />
                             </Trigger.EnterActions>
                         </Trigger>
                         <MultiTrigger>
@@ -2424,10 +2376,10 @@
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard" />
                             </MultiTrigger.ExitActions>
                             <MultiTrigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOn}"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOn}" />
                             </MultiTrigger.EnterActions>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsMouseOver" SourceName="Selection_Border" Value="True" />
@@ -2481,38 +2433,38 @@
                     <ControlTemplate.Resources>
                         <Storyboard x:Key="HoverOn">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.5"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.5" />
                             </DoubleAnimationUsingKeyFrames>
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverShineBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="HoverOff">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverShineBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="CheckedOn">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="CheckedBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.5"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="0.5" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="CheckedOff">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="CheckedBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="PressedOn">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Pressed" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="PressedOff">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Pressed" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                     </ControlTemplate.Resources>
@@ -2540,34 +2492,34 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOn}"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOn}" />
                             </Trigger.EnterActions>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource PressedOff}" x:Name="PressedOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource PressedOff}" x:Name="PressedOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource PressedOn}" x:Name="PressedOn_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource PressedOn}" x:Name="PressedOn_BeginStoryboard" />
                             </Trigger.EnterActions>
                         </Trigger>
-                        <Trigger Property="IsKeyboardFocused" Value="true"/>
+                        <Trigger Property="IsKeyboardFocused" Value="true" />
                         <Trigger Property="IsChecked" Value="true">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource CheckedOff}" x:Name="CheckedOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource CheckedOff}" x:Name="CheckedOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource CheckedOn}" x:Name="CheckedOn_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource CheckedOn}" x:Name="CheckedOn_BeginStoryboard" />
                             </Trigger.EnterActions>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Foreground" Value="#ADADAD" />
-                            <Setter Property="Background" TargetName="Border" Value="{DynamicResource DisabledBackgroundBrush}"/>
-                            <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource DisabledBorderBrush}"/>
-                            <Setter Property="Opacity" TargetName="grid" Value="0.5"/>
+                            <Setter Property="Background" TargetName="Border" Value="{DynamicResource DisabledBackgroundBrush}" />
+                            <Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource DisabledBorderBrush}" />
+                            <Setter Property="Opacity" TargetName="grid" Value="0.5" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -2671,7 +2623,6 @@
                         <DockPanel Margin="{TemplateBinding Padding}">
                             <ScrollViewer Focusable="false" DockPanel.Dock="Top" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden">
                                 <GridViewHeaderRowPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="2,0,2,0" AllowsColumnReorder="{Binding Path=TemplatedParent.View.AllowsColumnReorder, RelativeSource={RelativeSource TemplatedParent}}" ColumnHeaderContainerStyle="{Binding Path=TemplatedParent.View.ColumnHeaderContainerStyle, RelativeSource={RelativeSource TemplatedParent}}" ColumnHeaderContextMenu="{Binding Path=TemplatedParent.View.ColumnHeaderContextMenu, RelativeSource={RelativeSource TemplatedParent}}" ColumnHeaderTemplate="{Binding Path=TemplatedParent.View.ColumnHeaderTemplate, RelativeSource={RelativeSource TemplatedParent}}" ColumnHeaderTemplateSelector="{Binding Path=TemplatedParent.View.ColumnHeaderTemplateSelector, RelativeSource={RelativeSource TemplatedParent}}" ColumnHeaderToolTip="{Binding Path=TemplatedParent.View.ColumnHeaderToolTip, RelativeSource={RelativeSource TemplatedParent}}" Columns="{Binding Path=TemplatedParent.View.Columns, RelativeSource={RelativeSource TemplatedParent}}" />
-
                             </ScrollViewer>
                             <ScrollContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" x:Name="PART_ScrollContentPresenter" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" CanContentScroll="{TemplateBinding CanContentScroll}" KeyboardNavigation.DirectionalNavigation="Local" />
                         </DockPanel>
@@ -2743,95 +2694,84 @@
                         <Storyboard x:Key="HoverOn">
 
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
-
                         </Storyboard>
                         <Storyboard x:Key="HoverOff">
 
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
-
                         </Storyboard>
                         <Storyboard x:Key="SelectedOn">
 
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="SelectedRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
-
                         </Storyboard>
                         <Storyboard x:Key="SelectedOff">
 
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="SelectedRectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.4000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
-
                         </Storyboard>
                         <Storyboard x:Key="FocussedOn">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="FocusVisualElement" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="FocussedOff">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="FocusVisualElement" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                     </ControlTemplate.Resources>
                     <Border SnapsToDevicePixels="true" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2" x:Name="border">
 
                         <Grid Margin="2,0,2,0">
-                            <Rectangle x:Name="Background" IsHitTestVisible="False" Opacity="0.25" Fill="{StaticResource NormalBrush}" RadiusX="1" RadiusY="1"/>
-                            <Rectangle x:Name="HoverRectangle" IsHitTestVisible="False" Opacity="0" Fill="{StaticResource NormalBrush}" RadiusX="1" RadiusY="1"/>
-                            <Rectangle x:Name="SelectedRectangle" IsHitTestVisible="False" Opacity="0" Fill="{StaticResource SelectedBackgroundBrush}" RadiusX="1" RadiusY="1"/>
+                            <Rectangle x:Name="Background" IsHitTestVisible="False" Opacity="0.25" Fill="{StaticResource NormalBrush}" RadiusX="1" RadiusY="1" />
+                            <Rectangle x:Name="HoverRectangle" IsHitTestVisible="False" Opacity="0" Fill="{StaticResource NormalBrush}" RadiusX="1" RadiusY="1" />
+                            <Rectangle x:Name="SelectedRectangle" IsHitTestVisible="False" Opacity="0" Fill="{StaticResource SelectedBackgroundBrush}" RadiusX="1" RadiusY="1" />
                             <GridViewRowPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="0,2,0,2" VerticalAlignment="Stretch" />
                         </Grid>
-
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsSelected" Value="true">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource SelectedOff}" x:Name="SelectedOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource SelectedOff}" x:Name="SelectedOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource SelectedOn}" x:Name="SelectedOn_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource SelectedOn}" x:Name="SelectedOn_BeginStoryboard" />
                             </Trigger.EnterActions>
-
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard" />
                             </MultiTrigger.ExitActions>
                             <MultiTrigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOn}"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOn}" />
                             </MultiTrigger.EnterActions>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsMouseOver" Value="True" />
                                 <Condition Property="Selector.IsSelected" Value="False" />
                             </MultiTrigger.Conditions>
-
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="Selector.IsSelected" Value="True" />
                                 <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
-
                         </MultiTrigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}" />
-                            <Setter Property="Fill" TargetName="Background" Value="{DynamicResource DisabledBackgroundBrush}"/>
+                            <Setter Property="Fill" TargetName="Background" Value="{DynamicResource DisabledBackgroundBrush}" />
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsSelected" Value="true" />
                                 <Condition Property="Selector.IsSelectionActive" Value="false" />
                             </MultiTrigger.Conditions>
-
-
                         </MultiTrigger>
-
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
@@ -2846,7 +2786,6 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-
 
     <Style x:Key="GridViewColumnHeaderGripper" TargetType="{x:Type Thumb}">
         <Setter Property="Canvas.Right" Value="-8.5" />
@@ -2880,28 +2819,28 @@
                     <ControlTemplate.Resources>
                         <Storyboard x:Key="HoverOn">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverShineBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="HoverOff">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HoverShineBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="PressedOn">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="PressedBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.1000000" Value="1" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="PressedOff">
                             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="PressedBorder" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0"/>
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="0" />
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                     </ControlTemplate.Resources>
@@ -2909,14 +2848,14 @@
                         <Grid>
 
                             <Border x:Name="Main" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" Background="{DynamicResource NormalBrush}" BorderBrush="{DynamicResource NormalBorderBrush}" CornerRadius="0,0,0,0" />
-                            <Rectangle Opacity="1" Stroke="{x:Null}" RadiusX="0" RadiusY="0" VerticalAlignment="Stretch" Height="Auto" x:Name="Shine" Fill="{DynamicResource ShineBrush}"/>
+                            <Rectangle Opacity="1" Stroke="{x:Null}" RadiusX="0" RadiusY="0" VerticalAlignment="Stretch" Height="Auto" x:Name="Shine" Fill="{DynamicResource ShineBrush}" />
                             <Border x:Name="HoverBorder" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" Background="{DynamicResource HoverBrush}" BorderBrush="{DynamicResource NormalBorderBrush}" CornerRadius="0,0,0,0" Opacity="0" />
                             <Border x:Name="HoverShineBorder" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" Background="{DynamicResource HoverShineBrush}" BorderBrush="{DynamicResource NormalBorderBrush}" CornerRadius="0,0,0,0" Opacity="0" />
                             <Border x:Name="PressedBorder" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" Background="{DynamicResource PressedBrush}" BorderBrush="{DynamicResource PressedBorderBrush}" CornerRadius="0,0,0,0" Opacity="0" />
 
                             <Border BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}">
                                 <Border.BorderBrush>
-                                    <SolidColorBrush Color="{DynamicResource WhiteColor}"/>
+                                    <SolidColorBrush Color="{DynamicResource WhiteColor}" />
                                 </Border.BorderBrush>
                                 <ContentPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" Margin="2,2,2,2" />
                             </Border>
@@ -2928,18 +2867,18 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOff}" x:Name="HoverOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource HoverOn}"/>
+                                <BeginStoryboard Storyboard="{StaticResource HoverOn}" />
                             </Trigger.EnterActions>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource PressedOff}" x:Name="PressedOff_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource PressedOff}" x:Name="PressedOff_BeginStoryboard" />
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource PressedOn}" x:Name="PressedOn_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource PressedOn}" x:Name="PressedOn_BeginStoryboard" />
                             </Trigger.EnterActions>
                         </Trigger>
                         <Trigger Property="Height" Value="Auto">
@@ -2968,13 +2907,13 @@
         <Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}" />
         <Setter Property="Template" Value="{DynamicResource ButtonTemplate}" />
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
-						<Setter Property="FontSize" Value="10"/>
-				<Setter Property="MinHeight" Value="18"/>
-				<Setter Property="MinWidth" Value="50"/>
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="MinHeight" Value="18" />
+        <Setter Property="MinWidth" Value="50" />
     </Style>
 
     <Style x:Key="{x:Static ToolBar.CheckBoxStyleKey}" TargetType="{x:Type CheckBox}">
-			<Setter Property="FontSize" Value="10"/>
+        <Setter Property="FontSize" Value="10" />
         <Setter Property="SnapsToDevicePixels" Value="true" />
         <Setter Property="FocusVisualStyle" Value="{DynamicResource CheckBoxFocusVisual}" />
         <Setter Property="Background" Value="{DynamicResource NormalBrush}" />
@@ -2984,7 +2923,7 @@
     </Style>
 
     <Style x:Key="{x:Static ToolBar.RadioButtonStyleKey}" TargetType="{x:Type RadioButton}">
-			<Setter Property="FontSize" Value="10"/>
+        <Setter Property="FontSize" Value="10" />
         <Setter Property="SnapsToDevicePixels" Value="true" />
         <Setter Property="FocusVisualStyle" Value="{DynamicResource RadioButtonFocusVisual}" />
         <Setter Property="Background" Value="{DynamicResource NormalBrush}" />
@@ -3003,68 +2942,67 @@
     </Style>
 
     <Style x:Key="{x:Static ToolBar.ComboBoxStyleKey}" TargetType="{x:Type ComboBox}">
-			<Setter Property="FontSize" Value="10"/>
+        <Setter Property="FontSize" Value="10" />
         <Setter Property="SnapsToDevicePixels" Value="true" />
         <Setter Property="Template" Value="{DynamicResource ComboBoxTemplate}" />
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
     </Style>
 
     <Style x:Key="{x:Static ToolBar.TextBoxStyleKey}" TargetType="{x:Type TextBox}">
-			<Setter Property="FontSize" Value="10"/>
+        <Setter Property="FontSize" Value="10" />
         <Setter Property="KeyboardNavigation.TabNavigation" Value="None" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="AllowDrop" Value="true" />
         <Setter Property="Template" Value="{DynamicResource TextBoxTemplate}" />
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
-        <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}"/>
-        <Setter Property="BorderBrush" Value="#FF000000"/>
+        <Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="#FF000000" />
     </Style>
 
-
     <LinearGradientBrush x:Key="ToolBarHorizontalBackground" EndPoint="0,1" StartPoint="0,0">
-        <GradientStop Color="#FFFFFF" Offset="0"/>
-        <GradientStop Color="#FFFBFF" Offset="0.5"/>
-        <GradientStop Color="#F7F7F7" Offset="1"/>
+        <GradientStop Color="#FFFFFF" Offset="0" />
+        <GradientStop Color="#FFFBFF" Offset="0.5" />
+        <GradientStop Color="#F7F7F7" Offset="1" />
     </LinearGradientBrush>
     <LinearGradientBrush x:Key="ToolBarToggleButtonHorizontalBackground" EndPoint="0,1" StartPoint="0,0">
-        <GradientStop Color="#ECECEC" Offset="0"/>
-        <GradientStop Color="#DDDDDD" Offset="0.5"/>
-        <GradientStop Color="#A0A0A0" Offset="1"/>
+        <GradientStop Color="#ECECEC" Offset="0" />
+        <GradientStop Color="#DDDDDD" Offset="0.5" />
+        <GradientStop Color="#A0A0A0" Offset="1" />
     </LinearGradientBrush>
     <SolidColorBrush x:Key="ToolBarButtonHover" Color="{StaticResource MainColor}" />
-    <SolidColorBrush x:Key="ToolBarGripper" Color="#C6C3C6"/>
+    <SolidColorBrush x:Key="ToolBarGripper" Color="#C6C3C6" />
     <Style x:Key="ToolBarHorizontalOverflowButtonStyle" TargetType="{x:Type ToggleButton}">
-        <Setter Property="Background" Value="{StaticResource ToolBarToggleButtonHorizontalBackground}"/>
-        <Setter Property="MinHeight" Value="0"/>
-        <Setter Property="MinWidth" Value="0"/>
+        <Setter Property="Background" Value="{StaticResource ToolBarToggleButtonHorizontalBackground}" />
+        <Setter Property="MinHeight" Value="0" />
+        <Setter Property="MinWidth" Value="0" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
                     <Border SnapsToDevicePixels="true" x:Name="Bd" CornerRadius="0,0,0,0" Background="{DynamicResource LightBrush}">
                         <Canvas SnapsToDevicePixels="true" HorizontalAlignment="Right" Margin="7,2,2,2" VerticalAlignment="Bottom" Width="6" Height="7">
-                            <Path Stroke="White" Data="M 1 1.5 L 6 1.5"/>
-                            <Path Stroke="{TemplateBinding Foreground}" Data="M 0 0.5 L 5 0.5"/>
-                            <Path Fill="White" Data="M 0.5 4 L 6.5 4 L 3.5 7 Z"/>
-                            <Path Fill="{TemplateBinding Foreground}" Data="M -0.5 3 L 5.5 3 L 2.5 6 Z"/>
+                            <Path Stroke="White" Data="M 1 1.5 L 6 1.5" />
+                            <Path Stroke="{TemplateBinding Foreground}" Data="M 0 0.5 L 5 0.5" />
+                            <Path Fill="White" Data="M 0.5 4 L 6.5 4 L 3.5 7 Z" />
+                            <Path Fill="{TemplateBinding Foreground}" Data="M -0.5 3 L 5.5 3 L 2.5 6 Z" />
                         </Canvas>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background" TargetName="Bd" Value="{DynamicResource MouseOverBrush}"/>
+                            <Setter Property="Background" TargetName="Bd" Value="{DynamicResource MouseOverBrush}" />
                         </Trigger>
                         <Trigger Property="IsKeyboardFocused" Value="true">
-                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource ToolBarButtonHover}"/>
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource ToolBarButtonHover}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Foreground" Value="{StaticResource ToolBarGripper}"/>
+                            <Setter Property="Foreground" Value="{StaticResource ToolBarGripper}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-    <SolidColorBrush x:Key="ToolBarSubMenuBackground" Color="#FFFDFDFD"/>
-    <SolidColorBrush x:Key="ToolBarMenuBorder" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="ToolBarSubMenuBackground" Color="#FFFDFDFD" />
+    <SolidColorBrush x:Key="ToolBarMenuBorder" Color="#FFFFFFFF" />
     <Style x:Key="ToolBarThumbStyle" TargetType="{x:Type Thumb}">
         <Setter Property="Template">
             <Setter.Value>
@@ -3075,8 +3013,8 @@
                                 <DrawingBrush TileMode="Tile" Viewbox="0,0,4,4" ViewboxUnits="Absolute" Viewport="0,0,4,4" ViewportUnits="Absolute">
                                     <DrawingBrush.Drawing>
                                         <DrawingGroup>
-                                            <GeometryDrawing Brush="White" Geometry="M 1 1 L 1 3 L 3 3 L 3 1 z"/>
-                                            <GeometryDrawing Brush="{StaticResource ToolBarGripper}" Geometry="M 0 0 L 0 2 L 2 2 L 2 0 z"/>
+                                            <GeometryDrawing Brush="White" Geometry="M 1 1 L 1 3 L 3 3 L 3 1 z" />
+                                            <GeometryDrawing Brush="{StaticResource ToolBarGripper}" Geometry="M 0 0 L 0 2 L 2 2 L 2 0 z" />
                                         </DrawingGroup>
                                     </DrawingBrush.Drawing>
                                 </DrawingBrush>
@@ -3085,7 +3023,7 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Cursor" Value="SizeAll"/>
+                            <Setter Property="Cursor" Value="SizeAll" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -3093,34 +3031,34 @@
         </Setter>
     </Style>
     <LinearGradientBrush x:Key="ToolBarToggleButtonVerticalBackground" EndPoint="1,0" StartPoint="0,0">
-        <GradientStop Color="#ECECEC" Offset="0"/>
-        <GradientStop Color="#DDDDDD" Offset="0.5"/>
-        <GradientStop Color="#A0A0A0" Offset="1"/>
+        <GradientStop Color="#ECECEC" Offset="0" />
+        <GradientStop Color="#DDDDDD" Offset="0.5" />
+        <GradientStop Color="#A0A0A0" Offset="1" />
     </LinearGradientBrush>
     <Style x:Key="ToolBarVerticalOverflowButtonStyle" TargetType="{x:Type ToggleButton}">
-        <Setter Property="Background" Value="{StaticResource ToolBarToggleButtonVerticalBackground}"/>
-        <Setter Property="MinHeight" Value="0"/>
-        <Setter Property="MinWidth" Value="0"/>
+        <Setter Property="Background" Value="{StaticResource ToolBarToggleButtonVerticalBackground}" />
+        <Setter Property="MinHeight" Value="0" />
+        <Setter Property="MinWidth" Value="0" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
                     <Border SnapsToDevicePixels="true" x:Name="Bd" Background="{TemplateBinding Background}" CornerRadius="0,0,3,3">
                         <Canvas SnapsToDevicePixels="true" HorizontalAlignment="Right" Margin="2,7,2,2" VerticalAlignment="Bottom" Width="7" Height="6">
-                            <Path Stroke="White" Data="M 1.5 1 L 1.5 6"/>
-                            <Path Stroke="{TemplateBinding Foreground}" Data="M 0.5 0 L 0.5 5"/>
-                            <Path Fill="White" Data="M 3.5 0.5 L 7 3.5 L 4 6.5 Z"/>
-                            <Path Fill="{TemplateBinding Foreground}" Data="M 3 -0.5 L 6 2.5 L 3 5.5 Z"/>
+                            <Path Stroke="White" Data="M 1.5 1 L 1.5 6" />
+                            <Path Stroke="{TemplateBinding Foreground}" Data="M 0.5 0 L 0.5 5" />
+                            <Path Fill="White" Data="M 3.5 0.5 L 7 3.5 L 4 6.5 Z" />
+                            <Path Fill="{TemplateBinding Foreground}" Data="M 3 -0.5 L 6 2.5 L 3 5.5 Z" />
                         </Canvas>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource ToolBarButtonHover}"/>
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource ToolBarButtonHover}" />
                         </Trigger>
                         <Trigger Property="IsKeyboardFocused" Value="true">
-                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource ToolBarButtonHover}"/>
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource ToolBarButtonHover}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Foreground" Value="{StaticResource ToolBarGripper}"/>
+                            <Setter Property="Foreground" Value="{StaticResource ToolBarGripper}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -3128,22 +3066,22 @@
         </Setter>
     </Style>
     <LinearGradientBrush x:Key="ToolBarVerticalBackground" EndPoint="1,0" StartPoint="0,0">
-        <GradientStop Color="#FFFFFF" Offset="0"/>
-        <GradientStop Color="#FFFBFF" Offset="0.5"/>
-        <GradientStop Color="#F7F7F7" Offset="1"/>
+        <GradientStop Color="#FFFFFF" Offset="0" />
+        <GradientStop Color="#FFFBFF" Offset="0.5" />
+        <GradientStop Color="#F7F7F7" Offset="1" />
     </LinearGradientBrush>
     <Style TargetType="{x:Type ToolBar}">
-        <Setter Property="Background" Value="{StaticResource ToolBarHorizontalBackground}"/>
+        <Setter Property="Background" Value="{StaticResource ToolBarHorizontalBackground}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToolBar}">
                     <Grid SnapsToDevicePixels="true" Margin="3,1,1,1" x:Name="Grid">
                         <Grid HorizontalAlignment="Right" x:Name="OverflowGrid">
-                            <ToggleButton IsEnabled="{TemplateBinding HasOverflowItems}" FocusVisualStyle="{x:Null}" x:Name="OverflowButton" Style="{StaticResource ToolBarHorizontalOverflowButtonStyle}" ClickMode="Press" IsChecked="{Binding Path=IsOverflowOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+                            <ToggleButton IsEnabled="{TemplateBinding HasOverflowItems}" FocusVisualStyle="{x:Null}" x:Name="OverflowButton" Style="{StaticResource ToolBarHorizontalOverflowButtonStyle}" ClickMode="Press" IsChecked="{Binding Path=IsOverflowOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
                             <Popup Focusable="false" AllowsTransparency="true" IsOpen="{Binding Path=IsOverflowOpen, RelativeSource={RelativeSource TemplatedParent}}" Placement="Bottom" PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}" StaysOpen="False" x:Name="OverflowPopup">
                                 <Border x:Name="Shdw">
                                     <Border BorderThickness="1,1,1,1" Background="{DynamicResource LightBrush}" BorderBrush="{DynamicResource LightBrush}">
-                                        <ToolBarOverflowPanel Focusable="true" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" FocusVisualStyle="{x:Null}" Margin="2" x:Name="PART_ToolBarOverflowPanel" WrapWidth="200" KeyboardNavigation.DirectionalNavigation="Cycle" KeyboardNavigation.TabNavigation="Cycle"/>
+                                        <ToolBarOverflowPanel Focusable="true" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" FocusVisualStyle="{x:Null}" Margin="2" x:Name="PART_ToolBarOverflowPanel" WrapWidth="200" KeyboardNavigation.DirectionalNavigation="Cycle" KeyboardNavigation.TabNavigation="Cycle" />
                                     </Border>
                                 </Border>
                             </Popup>
@@ -3152,13 +3090,13 @@
                             <Grid>
 
                                 <DockPanel KeyboardNavigation.TabIndex="1" KeyboardNavigation.TabNavigation="Local">
-                                    <Thumb Padding="6,5,1,6" Margin="-3,-1,0,0" x:Name="ToolBarThumb" Style="{StaticResource ToolBarThumbStyle}" Width="10"/>
-                                    <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="Center" Margin="4,0,4,0" x:Name="ToolBarHeader" VerticalAlignment="Center" ContentSource="Header"/>
-                                    <ToolBarPanel SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="0,1,2,2" x:Name="PART_ToolBarPanel" IsItemsHost="true" Background="{DynamicResource NormalBrush}"/>
+                                    <Thumb Padding="6,5,1,6" Margin="-3,-1,0,0" x:Name="ToolBarThumb" Style="{StaticResource ToolBarThumbStyle}" Width="10" />
+                                    <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" HorizontalAlignment="Center" Margin="4,0,4,0" x:Name="ToolBarHeader" VerticalAlignment="Center" ContentSource="Header" />
+                                    <ToolBarPanel SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="0,1,2,2" x:Name="PART_ToolBarPanel" IsItemsHost="true" Background="{DynamicResource NormalBrush}" />
                                 </DockPanel>
                                 <Rectangle IsHitTestVisible="False" Opacity="0.15" VerticalAlignment="Top" Height="13.995" Grid.ColumnSpan="1" Margin="0,0,2,0">
                                     <Rectangle.Fill>
-                                        <SolidColorBrush Color="{DynamicResource WhiteColor}"/>
+                                        <SolidColorBrush Color="{DynamicResource WhiteColor}" />
                                     </Rectangle.Fill>
                                 </Rectangle>
                             </Grid>
@@ -3166,38 +3104,38 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsOverflowOpen" Value="true">
-                            <Setter Property="IsEnabled" TargetName="ToolBarThumb" Value="false"/>
+                            <Setter Property="IsEnabled" TargetName="ToolBarThumb" Value="false" />
                         </Trigger>
                         <Trigger Property="Header" Value="{x:Null}">
-                            <Setter Property="Visibility" TargetName="ToolBarHeader" Value="Collapsed"/>
+                            <Setter Property="Visibility" TargetName="ToolBarHeader" Value="Collapsed" />
                         </Trigger>
                         <Trigger Property="ToolBarTray.IsLocked" Value="true">
-                            <Setter Property="Visibility" TargetName="ToolBarThumb" Value="Collapsed"/>
+                            <Setter Property="Visibility" TargetName="ToolBarThumb" Value="Collapsed" />
                         </Trigger>
                         <Trigger Property="HasDropShadow" SourceName="OverflowPopup" Value="true">
-                            <Setter Property="Margin" TargetName="Shdw" Value="0,0,5,5"/>
-                            <Setter Property="SnapsToDevicePixels" TargetName="Shdw" Value="true"/>
-                            <Setter Property="Background" TargetName="Shdw" Value="#71000000"/>
+                            <Setter Property="Margin" TargetName="Shdw" Value="0,0,5,5" />
+                            <Setter Property="SnapsToDevicePixels" TargetName="Shdw" Value="true" />
+                            <Setter Property="Background" TargetName="Shdw" Value="#71000000" />
                         </Trigger>
                         <Trigger Property="Orientation" Value="Vertical">
-                            <Setter Property="Margin" TargetName="Grid" Value="1,3,1,1"/>
-                            <Setter Property="Style" TargetName="OverflowButton" Value="{StaticResource ToolBarVerticalOverflowButtonStyle}"/>
-                            <Setter Property="Height" TargetName="ToolBarThumb" Value="10"/>
-                            <Setter Property="Width" TargetName="ToolBarThumb" Value="Auto"/>
-                            <Setter Property="Margin" TargetName="ToolBarThumb" Value="-1,-3,0,0"/>
-                            <Setter Property="Padding" TargetName="ToolBarThumb" Value="5,6,6,1"/>
-                            <Setter Property="Margin" TargetName="ToolBarHeader" Value="0,0,0,4"/>
-                            <Setter Property="Margin" TargetName="PART_ToolBarPanel" Value="1,0,2,2"/>
-                            <Setter Property="DockPanel.Dock" TargetName="ToolBarThumb" Value="Top"/>
-                            <Setter Property="DockPanel.Dock" TargetName="ToolBarHeader" Value="Top"/>
-                            <Setter Property="HorizontalAlignment" TargetName="OverflowGrid" Value="Stretch"/>
-                            <Setter Property="VerticalAlignment" TargetName="OverflowGrid" Value="Bottom"/>
-                            <Setter Property="Placement" TargetName="OverflowPopup" Value="Right"/>
-                            <Setter Property="Margin" TargetName="MainPanelBorder" Value="0,0,0,11"/>
-                            <Setter Property="Background" Value="{StaticResource ToolBarVerticalBackground}"/>
+                            <Setter Property="Margin" TargetName="Grid" Value="1,3,1,1" />
+                            <Setter Property="Style" TargetName="OverflowButton" Value="{StaticResource ToolBarVerticalOverflowButtonStyle}" />
+                            <Setter Property="Height" TargetName="ToolBarThumb" Value="10" />
+                            <Setter Property="Width" TargetName="ToolBarThumb" Value="Auto" />
+                            <Setter Property="Margin" TargetName="ToolBarThumb" Value="-1,-3,0,0" />
+                            <Setter Property="Padding" TargetName="ToolBarThumb" Value="5,6,6,1" />
+                            <Setter Property="Margin" TargetName="ToolBarHeader" Value="0,0,0,4" />
+                            <Setter Property="Margin" TargetName="PART_ToolBarPanel" Value="1,0,2,2" />
+                            <Setter Property="DockPanel.Dock" TargetName="ToolBarThumb" Value="Top" />
+                            <Setter Property="DockPanel.Dock" TargetName="ToolBarHeader" Value="Top" />
+                            <Setter Property="HorizontalAlignment" TargetName="OverflowGrid" Value="Stretch" />
+                            <Setter Property="VerticalAlignment" TargetName="OverflowGrid" Value="Bottom" />
+                            <Setter Property="Placement" TargetName="OverflowPopup" Value="Right" />
+                            <Setter Property="Margin" TargetName="MainPanelBorder" Value="0,0,0,11" />
+                            <Setter Property="Background" Value="{StaticResource ToolBarVerticalBackground}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -3205,9 +3143,4 @@
         </Setter>
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
     </Style>
-
 </ResourceDictionary>
-
-
-
-

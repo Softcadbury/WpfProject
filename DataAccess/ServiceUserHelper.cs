@@ -1,6 +1,4 @@
-﻿using AutoMapper;
-using DataAccess.ServiceUser;
-using DataModel;
+﻿using DataAccess.ServiceUser;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,32 +7,24 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    public static class UserService
+    public static class ServiceUserHelper
     {
-        public static List<UserModel> GetListUser()
+        public static User[] GetListUser()
         {
             ServiceUserClient serviceUser = new ServiceUserClient();
-
-            User[] users = serviceUser.GetListUser();
-            if (users == null)
-                return null;
-
-            Mapper.CreateMap<User, UserModel>();
-            return Mapper.Map<List<User>, List<UserModel>>(users.ToList());
+            return serviceUser.GetListUser();
         }
 
-        public static UserModel GetUser(string login)
+        public static User GetUser(string login)
         {
             ServiceUserClient serviceUser = new ServiceUserClient();
-            Mapper.CreateMap<User, UserModel>();
-            return Mapper.Map<User, UserModel>(serviceUser.GetUser(login));
+            return serviceUser.GetUser(login);
         }
 
-        public static bool AddUser(UserModel user)
+        public static bool AddUser(User user)
         {
             ServiceUserClient serviceUser = new ServiceUserClient();
-            Mapper.CreateMap<UserModel, User>();
-            return serviceUser.AddUser(Mapper.Map<UserModel, User>(user));
+            return serviceUser.AddUser(user);
         }
 
         public static bool DeleteUser(string login)

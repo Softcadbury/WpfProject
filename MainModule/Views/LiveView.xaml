@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="MainModule.Views.LiveView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             Loaded="UserControlLoaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Button Content="{Binding ButtonContent}" Command="{Binding LiveCommand}"
+            HorizontalAlignment="Left" Margin="10" Height="27" Width="150"></Button>
+
+        <chartingToolkit:Chart Name="HeartChart" Grid.Column="0" Grid.Row="1" Margin="10" Background="#FF333333">
+            <chartingToolkit:LineSeries Title="Rythme Cardiaque"
+                IndependentValueBinding="{Binding Path=Key}"
+                DependentValueBinding="{Binding Path=Value}">
+                <chartingToolkit:LineSeries.DependentRangeAxis>
+                    <chartingToolkit:LinearAxis Orientation="Y" ShowGridLines="True" Maximum="1.100" Minimum="-1.100" />
+                </chartingToolkit:LineSeries.DependentRangeAxis>
+            </chartingToolkit:LineSeries>
+        </chartingToolkit:Chart>
+
+        <chartingToolkit:Chart Name="TempChart" Grid.Column="1" Grid.Row="1" Margin="10" Background="#FF333333">
+            <chartingToolkit:LineSeries Title="Température"
+                IndependentValueBinding="{Binding Path=Key}"
+                DependentValueBinding="{Binding Path=Value}">
+                <chartingToolkit:LineSeries.DependentRangeAxis>
+                    <chartingToolkit:LinearAxis Orientation="Y" ShowGridLines="True" Maximum="40" Minimum="34" />
+                </chartingToolkit:LineSeries.DependentRangeAxis>
+            </chartingToolkit:LineSeries>
+        </chartingToolkit:Chart>
+    </Grid>
+</UserControl>

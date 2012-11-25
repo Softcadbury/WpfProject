@@ -73,10 +73,6 @@
       <Project>{b948a858-619d-4007-b99e-886591ea6ebf}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataModel\DataModel.csproj">
-      <Project>{761786c7-386b-4b45-8385-46cd3dfbda33}</Project>
-      <Name>DataModel</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Tools\Tools.csproj">
       <Project>{82e47ac6-0926-49f1-9d6c-f4ee48fafa20}</Project>
       <Name>Tools</Name>

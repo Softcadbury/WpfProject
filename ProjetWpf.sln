@@ -5,24 +5,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetWpf", "ProjetWpf\Proj
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assemblies", "Assemblies", "{72A6AECE-996B-424C-BAEB-247280EDA69C}"
 	ProjectSection(SolutionItems) = preProject
-		Assemblies\AutoMapper.dll = Assemblies\AutoMapper.dll
 		Assemblies\Microsoft.Practices.Prism.dll = Assemblies\Microsoft.Practices.Prism.dll
 		Assemblies\Microsoft.Practices.Prism.UnityExtensions.dll = Assemblies\Microsoft.Practices.Prism.UnityExtensions.dll
 		Assemblies\Microsoft.Practices.ServiceLocation.dll = Assemblies\Microsoft.Practices.ServiceLocation.dll
 		Assemblies\Microsoft.Practices.Unity.dll = Assemblies\Microsoft.Practices.Unity.dll
+		Assemblies\System.Windows.Controls.DataVisualization.Toolkit.dll = Assemblies\System.Windows.Controls.DataVisualization.Toolkit.dll
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginModule", "LoginModule\LoginModule.csproj", "{B7C39BD1-DE3D-4651-A4B1-977ED0928434}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{B948A858-619D-4007-B99E-886591EA6EBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModel", "DataModel\DataModel.csproj", "{761786C7-386B-4B45-8385-46CD3DFBDA33}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools", "Tools\Tools.csproj", "{82E47AC6-0926-49F1-9D6C-F4EE48FAFA20}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainModule", "MainModule\MainModule.csproj", "{AE686F91-BB5E-4439-AB35-44B70978FE1A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTest", "DataTest\DataTest.csproj", "{5EFAB68F-540B-4D91-B93C-207249F8EDA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,10 +38,6 @@ Global
 		{B948A858-619D-4007-B99E-886591EA6EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B948A858-619D-4007-B99E-886591EA6EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B948A858-619D-4007-B99E-886591EA6EBF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{761786C7-386B-4B45-8385-46CD3DFBDA33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{761786C7-386B-4B45-8385-46CD3DFBDA33}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{761786C7-386B-4B45-8385-46CD3DFBDA33}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{761786C7-386B-4B45-8385-46CD3DFBDA33}.Release|Any CPU.Build.0 = Release|Any CPU
 		{82E47AC6-0926-49F1-9D6C-F4EE48FAFA20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{82E47AC6-0926-49F1-9D6C-F4EE48FAFA20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82E47AC6-0926-49F1-9D6C-F4EE48FAFA20}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -54,10 +46,6 @@ Global
 		{AE686F91-BB5E-4439-AB35-44B70978FE1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE686F91-BB5E-4439-AB35-44B70978FE1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE686F91-BB5E-4439-AB35-44B70978FE1A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5EFAB68F-540B-4D91-B93C-207249F8EDA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5EFAB68F-540B-4D91-B93C-207249F8EDA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5EFAB68F-540B-4D91-B93C-207249F8EDA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5EFAB68F-540B-4D91-B93C-207249F8EDA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

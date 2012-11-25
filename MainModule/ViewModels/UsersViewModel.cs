@@ -1,6 +1,5 @@
 ﻿using DataAccess;
 using DataAccess.ServiceUser;
-using DataModel;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -17,32 +16,35 @@ namespace MainModule.ViewModels
 {
     public class UsersViewModel : BaseViewModel
     {
-        #region Constructor
+        #region Constructor & Loaded
 
         public UsersViewModel()
         {
-            Users = new ObservableCollection<UserModel>(UserService.GetListUser());
-
             DeleteUserCommand = new RelayCommand(param => DeleteUser());
-            FindPictureCommand = new RelayCommand(param => FindPicture());
-            CreateUserCommand = new RelayCommand(param => CreateUser());
         }
 
-        #endregion Constructor
+        public void UserControlLoaded()
+        {
+            DeleteVisibility = MainViewModel.LevelVisibility;
+            RefreshUserList();
+            ResultMsgUserList = String.Empty;
+        }
+
+        #endregion Constructor & Loaded
 
         #region Fields - Users list
 
-        private ObservableCollection<UserModel> _users;
+        private ObservableCollection<User> _users;
 
-        public ObservableCollection<UserModel> Users
+        public ObservableCollection<User> Users
         {
             get { return _users; }
             set { _users = value; OnPropertyChanged("Users"); }
         }
 
-        private UserModel _selectedUser;
+        private User _selectedUser;
 
-        public UserModel SelectedUser
+        public User SelectedUser
         {
             get { return _selectedUser; }
             set { _selectedUser = value; OnPropertyChanged("SelectedUser"); }
@@ -66,73 +68,17 @@ namespace MainModule.ViewModels
 
         #endregion Fields - Users list
 
-        #region Fields - New user
+        #region Field - Visibility
 
-        private string _newLogin;
+        private Visibility _deleteVisibility;
 
-        public string NewLogin
+        public Visibility DeleteVisibility
         {
-            get { return _newLogin; }
-            set { _newLogin = value; OnPropertyChanged("NewLogin"); }
+            get { return _deleteVisibility; }
+            set { _deleteVisibility = value; OnPropertyChanged("DeleteVisibility"); }
         }
 
-        private string _newPwd;
-
-        public string NewPwd
-        {
-            get { return _newPwd; }
-            set { _newPwd = value; OnPropertyChanged("NewPwd"); }
-        }
-
-        private string _newName;
-
-        public string NewName
-        {
-            get { return _newName; }
-            set { _newName = value; OnPropertyChanged("NewName"); }
-        }
-
-        private string _newFirstname;
-
-        public string NewFirstname
-        {
-            get { return _newFirstname; }
-            set { _newFirstname = value; OnPropertyChanged("NewFirstname"); }
-        }
-
-        private string _newRole;
-
-        public string NewRole
-        {
-            get { return _newRole; }
-            set { _newRole = value; OnPropertyChanged("NewRole"); }
-        }
-
-        private string _newPicturePath;
-
-        public string NewPicturePath
-        {
-            get { return _newPicturePath; }
-            set { _newPicturePath = value; OnPropertyChanged("NewPicturePath"); }
-        }
-
-        private string _resultMsgNewUser;
-
-        public string ResultMsgNewUser
-        {
-            get { return _resultMsgNewUser; }
-            set { _resultMsgNewUser = value; OnPropertyChanged("ResultMsgNewUser"); }
-        }
-
-        private string _resultColorNewUser;
-
-        public string ResultColorNewUser
-        {
-            get { return _resultColorNewUser; }
-            set { _resultColorNewUser = value; OnPropertyChanged("ResultColorNewUser"); }
-        }
-
-        #endregion Fields - New user
+        #endregion Field - Visibility
 
         #region Commands
 
@@ -149,76 +95,23 @@ namespace MainModule.ViewModels
                 return;
             }
 
-            if (MessageBoxResult.No == MessageBox.Show("Etes-vous sûre de vouloir supprimer l'utilisateur " +
-                                                       SelectedUser.Name + " " + SelectedUser.Firstname + " ?",
+            string userName = SelectedUser.Name + " " + SelectedUser.Firstname;
+
+            if (MessageBoxResult.No == MessageBox.Show("Etes-vous sûre de vouloir supprimer l'utilisateur " + userName + " ?",
                                                        "Confirmation de suppression", MessageBoxButton.YesNo))
             {
-                DisplayValidResultUserList("La suppression de l'utilisateur a été annulée");
+                DisplayValidResultUserList("La suppression de l'utilisateur " + userName + " a été annulée");
                 return;
             }
 
-            if (!UserService.DeleteUser(SelectedUser.Login))
+            if (!ServiceUserHelper.DeleteUser(SelectedUser.Login))
             {
-                DisplayErrorResultUserList("La suppresion de l'utilisateur a échoué");
+                DisplayErrorResultUserList("La suppresion de l'utilisateur " + userName + " a échoué");
                 return;
             }
 
-            DisplayValidResultUserList("L'utilisateur " + SelectedUser.Name + " " + SelectedUser.Firstname + " a bien été supprimé");
+            DisplayValidResultUserList("L'utilisateur " + userName + " a bien été supprimé");
             RefreshUserList();
-        }
-
-        /// <summary>
-        /// Ouverture d'un exploreur pour récupérer une image lors de la création d'un utilisateur
-        /// </summary>
-        public RelayCommand FindPictureCommand { get; set; }
-
-        private void FindPicture()
-        {
-            var ofd = new OpenFileDialog();
-            if (ofd.ShowDialog() == true)
-                NewPicturePath = ofd.FileName;
-        }
-
-        /// <summary>
-        /// Création d'un utilisateur
-        /// </summary>
-        public RelayCommand CreateUserCommand { get; set; }
-
-        private void CreateUser()
-        {
-            if (string.IsNullOrEmpty(NewLogin) || string.IsNullOrEmpty(NewPwd) ||
-                string.IsNullOrEmpty(NewName) || string.IsNullOrEmpty(NewFirstname) ||
-                string.IsNullOrEmpty(NewRole) || string.IsNullOrEmpty(_newPicturePath))
-            {
-                DisplayErrorResultNewUser("Les champs pour la création d'un nouvel utilisateur sont imcomplets");
-                return;
-            }
-
-            FileInfo fi = new FileInfo(_newPicturePath);
-            if (!fi.Exists || (fi.Extension != ".jpg" && fi.Extension != ".png"))
-            {
-                DisplayErrorResultNewUser("L'image de profil n'est pas correcte, fomats acceptés : jpg et png");
-                return;
-            }
-
-            if (!UserService.AddUser(new UserModel()
-                {
-                    Login = NewLogin,
-                    Pwd = NewPwd,
-                    Name = NewName,
-                    Firstname = NewFirstname,
-                    Role = NewRole,
-                    Picture = Tools.UsefulMethods.ImageToByte(_newPicturePath),
-                    Connected = false
-                }))
-            {
-                DisplayErrorResultNewUser("La création du nouvel utilisateur a échoué");
-                return;
-            }
-
-            DisplayValidResultNewUser("L'utilisateur a bien été créé");
-            RefreshUserList();
-            ResetNewUserFields();
         }
 
         #endregion Commands
@@ -230,20 +123,9 @@ namespace MainModule.ViewModels
         /// </summary>
         private void RefreshUserList()
         {
-            Users = new ObservableCollection<UserModel>(UserService.GetListUser());
-        }
-
-        /// <summary>
-        /// Reset les champs pour la création d'un nouvel utilisateur
-        /// </summary>
-        private void ResetNewUserFields()
-        {
-            NewLogin = string.Empty;
-            NewPwd = string.Empty;
-            NewName = string.Empty;
-            NewFirstname = string.Empty;
-            NewRole = string.Empty;
-            NewPicturePath = string.Empty;
+            Users = new ObservableCollection<User>((from item in ServiceUserHelper.GetListUser()
+                                                    orderby item.Name
+                                                    select item).ToList());
         }
 
         /// <summary>
@@ -251,9 +133,8 @@ namespace MainModule.ViewModels
         /// </summary>
         private void DisplayErrorResultUserList(string msg)
         {
-            ResultMsgNewUser = string.Empty;
             ResultMsgUserList = msg;
-            ResultColorUserList = "Red";
+            ResultColorUserList = Tools.Useful.ErrorMsgColor;
         }
 
         /// <summary>
@@ -261,29 +142,8 @@ namespace MainModule.ViewModels
         /// </summary>
         private void DisplayValidResultUserList(string msg)
         {
-            ResultMsgNewUser = string.Empty;
             ResultMsgUserList = msg;
-            ResultColorUserList = "Green";
-        }
-
-        /// <summary>
-        /// Affiche un message d'erreur coté nouvel utilisateur
-        /// </summary>
-        private void DisplayErrorResultNewUser(string msg)
-        {
-            ResultMsgUserList = string.Empty;
-            ResultMsgNewUser = msg;
-            ResultColorNewUser = "Red";
-        }
-
-        /// <summary>
-        /// Affiche un message d'action valide coté nouvel utilisateur
-        /// </summary>
-        private void DisplayValidResultNewUser(string msg)
-        {
-            ResultMsgUserList = string.Empty;
-            ResultMsgNewUser = msg;
-            ResultColorNewUser = "Green";
+            ResultColorUserList = Tools.Useful.ValidMsgColor;
         }
 
         #endregion Methods

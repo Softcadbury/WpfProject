@@ -26,7 +26,7 @@ namespace ProjetWpf
             base.ConfigureModuleCatalog();
             ModuleCatalog moduleCatalog = (ModuleCatalog)this.ModuleCatalog;
 
-            //moduleCatalog.AddModule(typeof(LoginModule.LoginModule));
+            //  moduleCatalog.AddModule(typeof(LoginModule.LoginModule));
             moduleCatalog.AddModule(typeof(MainModule.StartModule));
         }
     }

@@ -1,4 +1,6 @@
-﻿using Microsoft.Practices.Prism.Events;
+﻿using DataAccess;
+using DataAccess.ServiceUser;
+using Microsoft.Practices.Prism.Events;
 using Microsoft.Practices.Prism.Regions;
 using Microsoft.Practices.ServiceLocation;
 using System;
@@ -27,6 +29,18 @@ namespace MainModule.ViewModels
                 return;
 
             UserName = sharingData.UserName;
+
+            User user = ServiceUserHelper.GetUser(sharingData.UserName);
+            if (user.Role == "Infirmière")
+            {
+                LevelVisibility = Visibility.Collapsed;
+                CreationVisibility = Visibility.Collapsed;
+            }
+            else
+            {
+                LevelVisibility = Visibility.Visible;
+                CreationVisibility = Visibility.Visible;
+            }
         }
 
         #endregion Constructor & OnCopyDataReceived
@@ -34,6 +48,15 @@ namespace MainModule.ViewModels
         #region Fields
 
         public static string UserName;
+        public static Visibility LevelVisibility;
+
+        private Visibility _creationVisibility;
+
+        public Visibility CreationVisibility
+        {
+            get { return _creationVisibility; }
+            set { _creationVisibility = value; OnPropertyChanged("CreationVisibility"); }
+        }
 
         #endregion Fields
     }

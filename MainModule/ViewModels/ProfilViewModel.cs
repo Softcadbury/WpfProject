@@ -9,20 +9,29 @@ namespace MainModule.ViewModels
 {
     public class ProfilViewModel : BaseViewModel
     {
-        #region Constructor
-
-        #endregion Constructor
-
-        #region Fields
+        #region Constructor & Loaded
 
         public ProfilViewModel()
         {
             BackCommand = new RelayCommand(param => BackCommandAction());
         }
 
-        #endregion Fields
+        public void UserControlLoaded()
+        {
+            Welcome = "Bienvenue " + MainViewModel.UserName;
+        }
+
+        #endregion Constructor & Loaded
 
         #region Commands
+
+        private string _welcome;
+
+        public string Welcome
+        {
+            get { return _welcome; }
+            set { _welcome = value; OnPropertyChanged("Welcome"); }
+        }
 
         public RelayCommand BackCommand { get; set; }
 
@@ -33,9 +42,5 @@ namespace MainModule.ViewModels
         }
 
         #endregion Commands
-
-        #region Methods
-
-        #endregion Methods
     }
 }
