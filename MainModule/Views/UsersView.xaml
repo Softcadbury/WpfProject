@@ -16,7 +16,7 @@
                 </Grid.RowDefinitions>
                 <!-- Liste -->
                 <ListBox ItemsSource="{Binding Users}" SelectionMode="Single" SelectedItem="{Binding SelectedUser}"
-                    Grid.Column="0" Grid.Row="0" Margin="10">
+                         Grid.Column="0" Grid.Row="0" Margin="10">
                     <ListBox.ItemTemplate>
                         <ItemContainerTemplate>
                             <StackPanel Orientation="Horizontal" Height="20">
@@ -43,10 +43,10 @@
                 </ContentControl>
                 <!-- Bouton de supression -->
                 <Button Command="{Binding DeleteUserCommand}" HorizontalAlignment="Center" Content="Supprimer l'utilisateur"
-                    Grid.Column="0" Grid.Row="1"  Margin="10" Height="27" Width="150" Visibility="{Binding DeleteVisibility}"></Button>
+                        Grid.Column="0" Grid.Row="1"  Margin="10" Height="27" Width="150" Visibility="{Binding DeleteVisibility}"></Button>
                 <!-- Message d'erreur -->
                 <Label Content="{Binding ResultMsgUserList}" Foreground="{Binding ResultColorUserList}" FontSize="16"
-                    Grid.Column="1" Grid.Row="1" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
+                       Grid.Column="1" Grid.Row="1" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
             </Grid>
         </GroupBox>
     </Grid>

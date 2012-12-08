@@ -16,19 +16,14 @@ using System.Windows.Shapes;
 namespace MainModule.Views
 {
     /// <summary>
-    /// Interaction logic for ProfilView.xaml
+    /// Interaction logic for PictureView.xaml
     /// </summary>
-    public partial class ProfilView : UserControl
+    public partial class PictureView : UserControl
     {
-        public ProfilView()
+        public PictureView(byte[] picture)
         {
             InitializeComponent();
-            DataContext = new ViewModels.ProfilViewModel();
-        }
-
-        private void UserControlLoaded(object sender, RoutedEventArgs e)
-        {
-            ((ViewModels.ProfilViewModel)DataContext).UserControlLoaded();
+            DataContext = new ViewModels.PicutreViewModel(picture);
         }
     }
 }

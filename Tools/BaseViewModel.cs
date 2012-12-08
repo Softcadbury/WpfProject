@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Tools
 {
     /// <summary>
-    /// Classe à utliser en classe mère pour les viewmodels
+    /// Classe à utliser en classe mère pour les ViewModels
     /// </summary>
     public class BaseViewModel : INotifyPropertyChanged
     {

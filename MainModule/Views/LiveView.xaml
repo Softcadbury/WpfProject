@@ -14,22 +14,26 @@
         </Grid.ColumnDefinitions>
 
         <Button Content="{Binding ButtonContent}" Command="{Binding LiveCommand}"
-            HorizontalAlignment="Left" Margin="10" Height="27" Width="150"></Button>
+                HorizontalAlignment="Left" Margin="10" Height="27" Width="150"></Button>
 
-        <chartingToolkit:Chart Name="HeartChart" Grid.Column="0" Grid.Row="1" Margin="10" Background="#FF333333">
+        <!-- Chart pour le rythme cardiaque -->
+        <chartingToolkit:Chart Name="HeartChart" Grid.Column="0" Grid.Row="1" Margin="10" Background="#FF333333"
+                               Foreground="#909090" Title="Rythme cardiaque du patient">
             <chartingToolkit:LineSeries Title="Rythme Cardiaque"
-                IndependentValueBinding="{Binding Path=Key}"
-                DependentValueBinding="{Binding Path=Value}">
+                                        IndependentValueBinding="{Binding Path=Key}"
+                                        DependentValueBinding="{Binding Path=Value}">
                 <chartingToolkit:LineSeries.DependentRangeAxis>
                     <chartingToolkit:LinearAxis Orientation="Y" ShowGridLines="True" Maximum="1.100" Minimum="-1.100" />
                 </chartingToolkit:LineSeries.DependentRangeAxis>
             </chartingToolkit:LineSeries>
         </chartingToolkit:Chart>
 
-        <chartingToolkit:Chart Name="TempChart" Grid.Column="1" Grid.Row="1" Margin="10" Background="#FF333333">
+        <!-- Chart pour la température -->
+        <chartingToolkit:Chart Name="TempChart" Grid.Column="1" Grid.Row="1" Margin="10" Background="#FF333333"
+                               Foreground="#909090" Title="Température du patient">
             <chartingToolkit:LineSeries Title="Température"
-                IndependentValueBinding="{Binding Path=Key}"
-                DependentValueBinding="{Binding Path=Value}">
+                                        IndependentValueBinding="{Binding Path=Key}"
+                                        DependentValueBinding="{Binding Path=Value}">
                 <chartingToolkit:LineSeries.DependentRangeAxis>
                     <chartingToolkit:LinearAxis Orientation="Y" ShowGridLines="True" Maximum="40" Minimum="34" />
                 </chartingToolkit:LineSeries.DependentRangeAxis>

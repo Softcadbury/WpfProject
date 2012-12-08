@@ -34,6 +34,9 @@ namespace MainModule.ViewModels
 
         #region Fields - Users list
 
+        /// <summary>
+        /// Liste des utilisateurs
+        /// </summary>
         private ObservableCollection<User> _users;
 
         public ObservableCollection<User> Users
@@ -42,6 +45,9 @@ namespace MainModule.ViewModels
             set { _users = value; OnPropertyChanged("Users"); }
         }
 
+        /// <summary>
+        /// Utilisateur sélectionné
+        /// </summary>
         private User _selectedUser;
 
         public User SelectedUser
@@ -50,6 +56,9 @@ namespace MainModule.ViewModels
             set { _selectedUser = value; OnPropertyChanged("SelectedUser"); }
         }
 
+        /// <summary>
+        /// Text du message de résultat
+        /// </summary>
         private string _resultMsgUserList;
 
         public string ResultMsgUserList
@@ -58,6 +67,9 @@ namespace MainModule.ViewModels
             set { _resultMsgUserList = value; OnPropertyChanged("ResultMsgUserList"); }
         }
 
+        /// <summary>
+        /// Couleur du message de résultat
+        /// </summary>
         private string _resultColorUserList;
 
         public string ResultColorUserList
@@ -70,6 +82,9 @@ namespace MainModule.ViewModels
 
         #region Field - Visibility
 
+        /// <summary>
+        /// Visibilité du bouton de supression de l'utilisateur. Hidden pour les infirmières
+        /// </summary>
         private Visibility _deleteVisibility;
 
         public Visibility DeleteVisibility

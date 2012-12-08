@@ -12,7 +12,7 @@
             <RowDefinition Height="6*"></RowDefinition>
         </Grid.RowDefinitions>
         <!-- Création d'un utilisateur -->
-        <GroupBox Header="Création d'un utilisateur" Grid.Column="0" Grid.Row="0" Margin="10">
+        <GroupBox Header="Ajout d'un utilisateur" Grid.Column="0" Grid.Row="0" Margin="10">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="120"></ColumnDefinition>
@@ -43,13 +43,13 @@
                     </StackPanel>
                 </StackPanel>
                 <Button Command="{Binding CreateUserCommand}" Height="27" Width="150"
-                    Grid.Row="1"  Grid.ColumnSpan="2" Margin="10">Créer l'utilisateur</Button>
+                        Grid.Row="1"  Grid.ColumnSpan="2" Margin="10">Ajouter l'utilisateur</Button>
                 <Label Content="{Binding ResultMsgNewUser}" Foreground="{Binding ResultColorNewUser}" FontSize="16"
-                    Grid.Row="2" Grid.ColumnSpan="2" Margin="10,0,10,10"></Label>
+                       Grid.Row="2" Grid.ColumnSpan="2" Margin="10,0,10,10"></Label>
             </Grid>
         </GroupBox>
         <!-- Création d'un utilisateur -->
-        <GroupBox Header="Création d'un patient" Grid.Column="0" Grid.Row="1" Margin="10">
+        <GroupBox Header="Ajout d'un patient" Grid.Column="0" Grid.Row="1" Margin="10">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="120"></ColumnDefinition>
@@ -69,12 +69,12 @@
                     <TextBox Text="{Binding NewPatientName}" Margin="2" Height="25"></TextBox>
                     <TextBox Text="{Binding NewPatientFirstname}" Margin="2" Height="25"></TextBox>
                     <DatePicker SelectedDate="{Binding NewPatientBirthday}" Height="25" Width="110"
-                        HorizontalAlignment="Left" BorderBrush="Transparent" />
+                                HorizontalAlignment="Left" BorderBrush="Transparent" />
                 </StackPanel>
                 <Button Command="{Binding CreatePatientCommand}" Height="27" Width="150"
-                    Grid.Row="1"  Grid.ColumnSpan="2" Margin="10">Créer le patient</Button>
+                        Grid.Row="1"  Grid.ColumnSpan="2" Margin="10">Ajouter le patient</Button>
                 <Label Content="{Binding ResultMsgNewPatient}" Foreground="{Binding ResultColorNewPatient}" FontSize="16"
-                    Grid.Row="2" Grid.ColumnSpan="2" Margin="10,0,10,10"></Label>
+                       Grid.Row="2" Grid.ColumnSpan="2" Margin="10,0,10,10"></Label>
             </Grid>
         </GroupBox>
         <!-- Création d'une observation -->
@@ -119,13 +119,13 @@
                     <StackPanel Orientation="Horizontal" Margin="2">
                         <Button Command="{Binding FindObsPictureCommand}" VerticalAlignment="Top" Height="25" Width="80">Charger</Button>
                         <ListBox ItemsSource="{Binding NewObsPicturePath}" MaxHeight="95"
-                            Margin="5,0" MinWidth="200" BorderBrush="Black"></ListBox>
+                                 Margin="5,0" MinWidth="200" BorderBrush="Black"></ListBox>
                     </StackPanel>
                 </StackPanel>
                 <Button Command="{Binding CreateObsCommand}" Height="27" Width="150"
-                    Grid.Row="1"  Grid.ColumnSpan="2" Margin="10">Ajouter l'observation</Button>
+                        Grid.Row="1"  Grid.ColumnSpan="2" Margin="10">Ajouter l'observation</Button>
                 <Label Content="{Binding ResultMsgNewObservation}" Foreground="{Binding ResultColorNewObservation}" FontSize="16"
-                    Grid.Row="2" Grid.ColumnSpan="2" Margin="10,0,10,10"></Label>
+                       Grid.Row="2" Grid.ColumnSpan="2" Margin="10,0,10,10"></Label>
             </Grid>
         </GroupBox>
     </Grid>

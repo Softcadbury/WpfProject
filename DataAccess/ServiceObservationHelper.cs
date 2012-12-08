@@ -12,7 +12,15 @@ namespace DataAccess
         public static bool AddObservation(int idPatient, Observation obs)
         {
             ServiceObservationClient serviceObs = new ServiceObservationClient();
-            return serviceObs.AddObservation(idPatient, obs);
+
+            try
+            {
+                return serviceObs.AddObservation(idPatient, obs);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

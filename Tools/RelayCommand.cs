@@ -7,7 +7,8 @@ using System.Windows.Input;
 namespace Tools
 {
     /// <summary>
-    /// Classe qui implémente les commandes, utilisation :
+    /// Classe qui implémente les commandes
+    /// Utilisation :
     /// public RelayCommand command = new RelayCommand(param => Action());
     /// </summary>
     public class RelayCommand : ICommand

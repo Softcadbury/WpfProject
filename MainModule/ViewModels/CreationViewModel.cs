@@ -33,6 +33,8 @@ namespace MainModule.ViewModels
             RefreshPatientList();
             ResetDisplay();
             ResetNewUserFields();
+            ResetNewPatientFields();
+            ResetNewObservationFields();
         }
 
         #endregion Constructor & Loaded

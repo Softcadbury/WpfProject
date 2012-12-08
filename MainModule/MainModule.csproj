@@ -67,7 +67,7 @@
     <Compile Include="ViewModels\LiveViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\PatientsViewModel.cs" />
-    <Compile Include="ViewModels\ProfilViewModel.cs" />
+    <Compile Include="ViewModels\PicutreViewModel.cs" />
     <Compile Include="ViewModels\UsersViewModel.cs" />
     <Compile Include="Views\CreationView.xaml.cs">
       <DependentUpon>CreationView.xaml</DependentUpon>
@@ -81,8 +81,8 @@
     <Compile Include="Views\PatientsView.xaml.cs">
       <DependentUpon>PatientsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ProfilView.xaml.cs">
-      <DependentUpon>ProfilView.xaml</DependentUpon>
+    <Compile Include="Views\PictureView.xaml.cs">
+      <DependentUpon>PictureView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UsersView.xaml.cs">
       <DependentUpon>UsersView.xaml</DependentUpon>
@@ -115,7 +115,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ProfilView.xaml">
+    <Page Include="Views\PictureView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

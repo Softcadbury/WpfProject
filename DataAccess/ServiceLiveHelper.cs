@@ -16,9 +16,17 @@ namespace DataAccess
         public static void Subscribe(ObservableCollection<KeyValuePair<DateTime, double>> heartQueue,
                                      ObservableCollection<KeyValuePair<DateTime, double>> tempQueue)
         {
-            _callBack = new InstanceContext(new CallbackHandler(heartQueue, tempQueue));
-            _serviceLive = new ServiceLiveClient(_callBack);
-            _serviceLive.Subscribe();
+            try
+            {
+                _callBack = new InstanceContext(new CallbackHandler(heartQueue, tempQueue));
+                _serviceLive = new ServiceLiveClient(_callBack);
+                _serviceLive.Subscribe();
+            }
+            catch (Exception)
+            {
+                _callBack = null;
+                _serviceLive = null;
+            }
         }
 
         private static InstanceContext _callBack;

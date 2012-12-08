@@ -56,7 +56,7 @@ namespace Tools
         }
 
         /// <summary>
-        /// Fields pour définir les messages d'erreurs ou d'actions valides
+        /// Fields pour définir la couleur des messages d'erreurs ou d'actions valides
         /// </summary>
 
         public static string ErrorMsgColor = "Coral";

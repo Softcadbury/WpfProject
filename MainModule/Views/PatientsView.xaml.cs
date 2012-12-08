@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MainModule.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,7 +26,7 @@ namespace MainModule.Views
         public PatientsView()
         {
             InitializeComponent();
-            DataContext = new ViewModels.PatientsViewModel();
+            DataContext = new ViewModels.PatientsViewModel() { ChartObs = this.ChartObs };
         }
 
         private void UserControlLoaded(object sender, RoutedEventArgs e)

@@ -12,25 +12,57 @@ namespace DataAccess
         public static Patient[] GetListPatient()
         {
             ServicePatientClient servicePatient = new ServicePatientClient();
-            return servicePatient.GetListPatient();
+
+            try
+            {
+                return servicePatient.GetListPatient();
+            }
+            catch (Exception)
+            {
+                return new Patient[0];
+            }
         }
 
         public static Patient GetPatient(int id)
         {
             ServicePatientClient servicePatient = new ServicePatientClient();
-            return servicePatient.GetPatient(id);
+
+            try
+            {
+                return servicePatient.GetPatient(id);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public static bool AddPatient(Patient patient)
         {
             ServicePatientClient servicePatient = new ServicePatientClient();
-            return servicePatient.AddPatient(patient);
+
+            try
+            {
+                return servicePatient.AddPatient(patient);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public static bool DeletePatient(int id)
         {
             ServicePatientClient servicePatient = new ServicePatientClient();
-            return servicePatient.DeletePatient(id);
+
+            try
+            {
+                return servicePatient.DeletePatient(id);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }

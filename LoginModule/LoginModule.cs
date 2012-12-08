@@ -21,7 +21,6 @@ namespace LoginModule
         {
             _regionManager.RegisterViewWithRegion(NameOfRegions.MainRegion, typeof(Views.LoginView));
             _container.RegisterType<Object, Views.LoginView>(NameOfViews.LoginView);
-            _container.RegisterType<Object, ViewModels.LoginViewModel>("aze");
         }
     }
 }

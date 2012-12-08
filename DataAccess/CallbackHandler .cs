@@ -12,7 +12,7 @@ namespace DataAccess
     public class CallbackHandler : IServiceLiveCallback
     {
         public CallbackHandler(ObservableCollection<KeyValuePair<DateTime, double>> heartQueue,
-                                     ObservableCollection<KeyValuePair<DateTime, double>> tempQueue)
+                               ObservableCollection<KeyValuePair<DateTime, double>> tempQueue)
         {
             _heartQueue = heartQueue;
             _tempQueue = tempQueue;

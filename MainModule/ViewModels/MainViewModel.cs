@@ -19,6 +19,8 @@ namespace MainModule.ViewModels
 
         public MainViewModel()
         {
+            BackCommand = new RelayCommand(param => BackCommandAction());
+
             EventAggregator eventAgg = (EventAggregator)ServiceLocator.Current.GetInstance<IEventAggregator>();
             eventAgg.GetEvent<CompositePresentationEvent<SharingData>>().Subscribe(OnCopyDataReceived, ThreadOption.UIThread);
         }
@@ -47,9 +49,19 @@ namespace MainModule.ViewModels
 
         #region Fields
 
+        /// <summary>
+        /// Nom de l'utilisateur
+        /// </summary>
         public static string UserName;
+
+        /// <summary>
+        /// Visibilité des boutons de supression du patient. Hidden pour les infirmières
+        /// </summary>
         public static Visibility LevelVisibility;
 
+        /// <summary>
+        /// Visibilité du TabItem "Ajout". Hidden pour les infirmières
+        /// </summary>
         private Visibility _creationVisibility;
 
         public Visibility CreationVisibility
@@ -59,5 +71,20 @@ namespace MainModule.ViewModels
         }
 
         #endregion Fields
+
+        #region Commands
+
+        /// <summary>
+        /// Déconnexion de l'utilisateur
+        /// </summary>
+        public RelayCommand BackCommand { get; set; }
+
+        private void BackCommandAction()
+        {
+            SharingData sharingData = new SharingData() { DestinationModuleName = NameOfViews.LoginView };
+            LoadModule(sharingData, NameOfRegions.MainRegion);
+        }
+
+        #endregion Commands
     }
 }

@@ -9,7 +9,7 @@
         </Grid.RowDefinitions>
 
         <Button Content="Quitter" Command="{Binding LeaveCommand}"
-            Margin="10" Height="30" Width="100" HorizontalAlignment="Left" />
+                Margin="20,10,10,10" Height="30" Width="100" HorizontalAlignment="Left" />
 
         <Image Source="/ProjetWpf;component/icon.png" Grid.Row="1" Width="350" />
 

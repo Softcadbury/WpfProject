@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-
+using System.Windows.Controls.DataVisualization.Charting;
 using Tools;
 
 namespace MainModule.ViewModels
@@ -23,13 +23,19 @@ namespace MainModule.ViewModels
         {
             PatientInfoVisibility = Visibility.Hidden;
             PatientObservationVisibility = Visibility.Hidden;
+
+            _weightQueue = new ObservableCollection<KeyValuePair<DateTime, double>>();
+            _bloodPressureQueue = new ObservableCollection<KeyValuePair<DateTime, double>>();
             Pictures = new ObservableCollection<PictureModel>();
+
             DeletePatientCommand = new RelayCommand(param => DeletePatient());
         }
 
         public void UserControlLoaded()
         {
             DeleteVisibility = MainViewModel.LevelVisibility;
+            ((LineSeries)ChartObs.Series[0]).ItemsSource = _weightQueue;
+            ((LineSeries)ChartObs.Series[1]).ItemsSource = _bloodPressureQueue;
             RefreshPatientList();
             ResultMsgPatientList = String.Empty;
         }
@@ -38,6 +44,9 @@ namespace MainModule.ViewModels
 
         #region Fields - Patients list & info
 
+        /// <summary>
+        /// Liste des patients
+        /// </summary>
         private ObservableCollection<Patient> _patients;
 
         public ObservableCollection<Patient> Patients
@@ -46,6 +55,9 @@ namespace MainModule.ViewModels
             set { _patients = value; OnPropertyChanged("Patients"); }
         }
 
+        /// <summary>
+        /// Patient sélectionné
+        /// </summary>
         private Patient _selectedPatient;
 
         public Patient SelectedPatient
@@ -57,17 +69,13 @@ namespace MainModule.ViewModels
                 OnPropertyChanged("SelectedPatient");
                 PatientInfoVisibility = Visibility.Visible;
                 PatientObservationVisibility = Visibility.Hidden;
+                RefreshObservationsChart();
             }
         }
 
-        private Visibility _patientInfoVisibility;
-
-        public Visibility PatientInfoVisibility
-        {
-            get { return _patientInfoVisibility; }
-            set { _patientInfoVisibility = value; OnPropertyChanged("PatientInfoVisibility"); }
-        }
-
+        /// <summary>
+        /// Text du message de résultat
+        /// </summary>
         private string _resultMsgPatientList;
 
         public string ResultMsgPatientList
@@ -76,6 +84,9 @@ namespace MainModule.ViewModels
             set { _resultMsgPatientList = value; OnPropertyChanged("ResultMsgPatientList"); }
         }
 
+        /// <summary>
+        /// Couleur du message de résultat
+        /// </summary>
         private string _resultColorPatientList;
 
         public string ResultColorPatientList
@@ -88,6 +99,9 @@ namespace MainModule.ViewModels
 
         #region Fields - Observation info & images
 
+        /// <summary>
+        /// Observation sélectionnée
+        /// </summary>
         private Observation _selectedObservation;
 
         public Observation SelectedObservation
@@ -102,14 +116,17 @@ namespace MainModule.ViewModels
             }
         }
 
-        private Visibility _patientObservationVisibility;
+        /// <summary>
+        /// Chart et listes utilisées pour afficher les poids et les tensions artérielles enregistrés dans les observations
+        /// </summary>
+        public Chart ChartObs;
 
-        public Visibility PatientObservationVisibility
-        {
-            get { return _patientObservationVisibility; }
-            set { _patientObservationVisibility = value; OnPropertyChanged("PatientObservationVisibility"); }
-        }
+        private ObservableCollection<KeyValuePair<DateTime, double>> _weightQueue;
+        private ObservableCollection<KeyValuePair<DateTime, double>> _bloodPressureQueue;
 
+        /// <summary>
+        /// Liste des images contenues dans l'observation
+        /// </summary>
         private ObservableCollection<PictureModel> _pictures;
 
         public ObservableCollection<PictureModel> Pictures
@@ -122,6 +139,31 @@ namespace MainModule.ViewModels
 
         #region Field - Visibility
 
+        /// <summary>
+        /// Visibilité des infos du patient. Hidden quand aucun patient n'est sélectionné
+        /// </summary>
+        private Visibility _patientInfoVisibility;
+
+        public Visibility PatientInfoVisibility
+        {
+            get { return _patientInfoVisibility; }
+            set { _patientInfoVisibility = value; OnPropertyChanged("PatientInfoVisibility"); }
+        }
+
+        /// <summary>
+        /// Visibilité des informations sur l'observation du patient. Hidden quand aucune observation n'est sélectionnée
+        /// </summary>
+        private Visibility _patientObservationVisibility;
+
+        public Visibility PatientObservationVisibility
+        {
+            get { return _patientObservationVisibility; }
+            set { _patientObservationVisibility = value; OnPropertyChanged("PatientObservationVisibility"); }
+        }
+
+        /// <summary>
+        /// Visibilité du bouton de supression du patient. Hidden pour les infirmières
+        /// </summary>
         private Visibility _deleteVisibility;
 
         public Visibility DeleteVisibility
@@ -168,7 +210,7 @@ namespace MainModule.ViewModels
 
         #endregion Commands
 
-        #region Methods
+        #region Methods - Refresh
 
         /// <summary>
         /// Reset la liste des patients
@@ -184,6 +226,24 @@ namespace MainModule.ViewModels
         }
 
         /// <summary>
+        /// Reset le chart des observations
+        /// </summary>
+        private void RefreshObservationsChart()
+        {
+            _weightQueue.Clear();
+            _bloodPressureQueue.Clear();
+
+            if (SelectedPatient == null || SelectedPatient.Observations == null)
+                return;
+
+            foreach (Observation obs in SelectedPatient.Observations)
+            {
+                _weightQueue.Add(new KeyValuePair<DateTime, double>(obs.Date, obs.Weight));
+                _bloodPressureQueue.Add(new KeyValuePair<DateTime, double>(obs.Date, obs.BloodPressure));
+            }
+        }
+
+        /// <summary>
         /// Reset les images de l'observation
         /// </summary>
         private void RefreshObservationPictures()
@@ -192,13 +252,13 @@ namespace MainModule.ViewModels
                 return;
 
             Pictures.Clear();
-
-            if (SelectedObservation.Pictures == null)
-                return;
-
             foreach (byte[] picture in SelectedObservation.Pictures)
                 Pictures.Add(new PictureModel(picture, this));
         }
+
+        #endregion Methods - Refresh
+
+        #region Methods - Result Msg
 
         /// <summary>
         /// Affiche un message d'erreur coté liste patient
@@ -218,14 +278,6 @@ namespace MainModule.ViewModels
             ResultColorPatientList = Tools.Useful.ValidMsgColor;
         }
 
-        /// <summary>
-        /// Zoom sur l'image
-        /// </summary>
-        public void ZoomPicture(byte[] picture)
-        {
-            MessageBox.Show("Open pic");
-        }
-
-        #endregion Methods
+        #endregion Methods - Result Msg
     }
 }

@@ -12,43 +12,97 @@ namespace DataAccess
         public static User[] GetListUser()
         {
             ServiceUserClient serviceUser = new ServiceUserClient();
-            return serviceUser.GetListUser();
+
+            try
+            {
+                return serviceUser.GetListUser();
+            }
+            catch (Exception)
+            {
+                return new User[0];
+            }
         }
 
         public static User GetUser(string login)
         {
             ServiceUserClient serviceUser = new ServiceUserClient();
-            return serviceUser.GetUser(login);
+
+            try
+            {
+                return serviceUser.GetUser(login);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public static bool AddUser(User user)
         {
             ServiceUserClient serviceUser = new ServiceUserClient();
-            return serviceUser.AddUser(user);
+
+            try
+            {
+                return serviceUser.AddUser(user);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public static bool DeleteUser(string login)
         {
             ServiceUserClient serviceUser = new ServiceUserClient();
-            return serviceUser.DeleteUser(login);
+
+            try
+            {
+                return serviceUser.DeleteUser(login);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public static bool Connect(string login, string pwd)
         {
             ServiceUserClient serviceUser = new ServiceUserClient();
-            return serviceUser.Connect(login, pwd);
+
+            try
+            {
+                return serviceUser.Connect(login, pwd);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public static void Disconnect(string login)
         {
             ServiceUserClient serviceUser = new ServiceUserClient();
-            serviceUser.Disconnect(login);
+
+            try
+            {
+                serviceUser.Disconnect(login);
+            }
+            catch (Exception)
+            { }
         }
 
         public static string GetRole(string login)
         {
             ServiceUserClient serviceUser = new ServiceUserClient();
-            return serviceUser.GetRole(login);
+
+            try
+            {
+                return serviceUser.GetRole(login);
+            }
+            catch (Exception)
+            {
+                return string.Empty;
+            }
         }
     }
 }
